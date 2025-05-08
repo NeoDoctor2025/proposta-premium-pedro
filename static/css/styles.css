@@ -408,30 +408,33 @@ header h2 {
     }
 }
 
-/* Investment New Style */
+/* Investment New Style - Redesigned */
 .investment-new-container {
     margin-top: 1rem;
 }
 
-.investment-header {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 1.2rem;
-    color: var(--primary);
-}
-
+/* Main Gradient Investment Section */
 .investment-initial-section {
-    background: linear-gradient(135deg, #ff5722, #e9361d);
-    padding: 2rem;
+    background: linear-gradient(90deg, #f77448, #e7375b);
     border-radius: var(--radius-md);
     color: white;
-    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
+.investment-header {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+/* Initial Investment Grid */
 .investment-initial-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -440,35 +443,44 @@ header h2 {
     }
 }
 
+/* Investment Box */
 .investment-box-new {
     background-color: rgba(255, 255, 255, 0.15);
-    padding: 1.5rem;
     border-radius: var(--radius-sm);
+    padding: 1.2rem;
 }
 
 .investment-subheader {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    margin-bottom: 0.8rem;
-}
-
-.investment-price {
-    font-size: 1.8rem;
-    font-weight: 700;
     margin-bottom: 0.5rem;
 }
 
+.investment-price {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
 .investment-description {
+    font-size: 0.8rem;
     margin-bottom: 0;
-    font-size: 0.95rem;
     opacity: 0.9;
+}
+
+/* Profit Division Section */
+.investment-division-header {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 1.5rem 0 1rem;
+    color: white;
 }
 
 .investment-division-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
 }
 
 @media (min-width: 768px) {
@@ -479,8 +491,8 @@ header h2 {
 
 .division-box {
     background-color: rgba(255, 255, 255, 0.15);
-    padding: 1.2rem;
     border-radius: var(--radius-sm);
+    padding: 1.2rem;
     text-align: center;
 }
 
@@ -491,30 +503,39 @@ header h2 {
 }
 
 .division-percentage {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 0.3rem;
 }
 
 .division-note {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     margin-bottom: 0;
     opacity: 0.8;
 }
 
+/* Services Section */
 .investment-services-section {
-    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
-.investment-services-grid {
+.services-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #f77448;
+    margin-bottom: 1.5rem;
+}
+
+.services-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 @media (min-width: 768px) {
-    .investment-services-grid {
+    .services-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
     }
 }
 
@@ -522,20 +543,19 @@ header h2 {
     display: flex;
     align-items: flex-start;
     gap: 1rem;
-    padding: 1rem;
-    border-bottom: 1px solid #eee;
 }
 
-.service-number-new {
-    background-color: var(--primary);
-    color: white;
-    width: 28px;
-    height: 28px;
+.service-number-circle {
+    width: 25px;
+    height: 25px;
+    background-color: #f3f3f3;
+    color: #f77448;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 600;
+    font-size: 0.9rem;
     flex-shrink: 0;
 }
 
@@ -544,24 +564,34 @@ header h2 {
 }
 
 .service-title {
+    color: #333;
     font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
 }
 
 .service-description {
-    font-size: 0.9rem;
+    color: #666;
+    font-size: 0.85rem;
     margin-bottom: 0;
-    color: #555;
 }
 
+/* Contract Section */
 .contract-section {
     margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contract-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #f77448;
+    margin-bottom: 0.5rem;
 }
 
 .contract-duration {
-    font-size: 1.1rem;
-    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 0;
 }
 
 /* Case Studies - New Format */
