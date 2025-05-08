@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta de Parceria - Neo Doctor</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50,10 A40,40 0 1 0 50,90 A40,40 0 1 0 50,10 Z' fill='%23ff5722'/%3E%3Cpath d='M35,35 L65,35 L65,65 L35,65 Z' fill='white'/%3E%3Cpath d='M45,25 L55,25 L55,75 L45,75 Z' fill='white'/%3E%3C/svg%3E">
+</head>
+<body>
+    <!-- Header with curved bottom edge -->
+    <header>
+        <div class="container">
+            <h1>PROPOSTA DE PARCERIA NEO DOCTOR</h1>
+            <h2>Transforme sua Expertise Médica em um Negócio Digital Lucrativo</h2>
+        </div>
+    </header>
+    
+    <!-- Tab Navigation -->
+    <div class="tabs-nav">
+        <div class="container">
+            <div class="tabs-container">
+                <button class="tab-button active" data-tab="about">
+                    <i class="fas fa-users"></i> Quem Somos
+                </button>
+                <button class="tab-button" data-tab="cases">
+                    <i class="fas fa-chart-line"></i> Cases de Sucesso
+                </button>
+                <button class="tab-button" data-tab="methodology">
+                    <i class="fas fa-clipboard-list"></i> Nossa Metodologia
+                </button>
+                <button class="tab-button" data-tab="services">
+                    <i class="fas fa-briefcase"></i> O Que Oferecemos
+                </button>
+                <button class="tab-button" data-tab="investment">
+                    <i class="fas fa-hand-holding-usd"></i> Investimento
+                </button>
+                <button class="tab-button" data-tab="faq">
+                    <i class="fas fa-question-circle"></i> FAQ
+                </button>
+                <button class="tab-button" data-tab="contact">
+                    <i class="fas fa-envelope"></i> Contato
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Tab Content -->
+    <div class="container">
+        <div class="tab-content">
+            <!-- About Tab -->
+            <div id="about" class="tab-pane active">
+                <div class="card">
+                    <h2 class="section-title">QUEM SOMOS</h2>
+                    <div class="mb-4">
+                        <p class="mb-3">
+                            Somos uma <strong>agência de lançamentos digitais especializada em criação de cursos para cirurgiões plásticos</strong>, com presença global e experiência comprovada:
+                        </p>
+                        <ul class="list">
+                            <li>Atuação em mais de 59 países com serviços em múltiplos idiomas</li>
+                            <li>Criadores do maior case de sucesso mundial em Rinoplastia</li>
+                            <li>Desde 2020, focados exclusivamente na construção de negócios digitais para cirurgiões plásticos renomados</li>
+                        </ul>
+                    </div>
+                    
+                    <h3 class="section-title mb-3">NOSSA MISSÃO</h3>
+                    <div class="highlight-box mb-4">
+                        <p style="font-size: 1.2rem; font-weight: 500;">Transformar Cirurgiões Plásticos Renomados em Líderes Digitais Globais</p>
+                    </div>
+                    <p class="mb-5">
+                        Acreditamos que sua expertise merece alcance mundial. Nossa missão é construir uma presença digital que reflita a excelência do seu trabalho, expandindo seu impacto e reconhecimento internacional.
+                    </p>
+                    
+                    <h3 class="section-title mt-5 mb-4">QUEM ESTÁ POR TRÁS?</h3>
+                    <div class="grid grid-3">
+                        <div class="mb-2 text-center">
+                            <div class="founder-photo mb-3">
+                                <img src="https://via.placeholder.com/180x230/ff5722/ffffff?text=Humberto+Lopes" alt="Humberto Lopes" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <h4 class="mb-2">Humberto Lopes</h4>
+                            <p class="mb-1">CEO e Fundador</p>
+                        </div>
+                        
+                        <div class="mb-2 text-center">
+                            <div class="founder-photo mb-3">
+                                <img src="https://via.placeholder.com/180x230/e91e63/ffffff?text=Ana+Silva" alt="Ana Silva" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <h4 class="mb-2">Ana Silva</h4>
+                            <p class="mb-1">Diretora de Marketing</p>
+                        </div>
+                        
+                        <div class="mb-2 text-center">
+                            <div class="founder-photo mb-3">
+                                <img src="https://via.placeholder.com/180x230/ff9800/ffffff?text=Carlos+Santos" alt="Carlos Santos" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <h4 class="mb-2">Carlos Santos</h4>
+                            <p class="mb-1">Diretor de Estratégia</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-5">
+                        <h3 class="section-title mb-4">NOSSA EQUIPE</h3>
+                        <div class="team-photo mb-3">
+                            <img src="https://via.placeholder.com/1200x300/f5f5f5/333333?text=Equipe+Neo+Doctor" alt="Equipe Neo Doctor" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <p>
+                            Nossa equipe é composta por profissionais especializados em marketing digital, desenvolvimento de conteúdo, design, tecnologia e gestão de projetos, todos dedicados a transformar sua expertise médica em um negócio digital de sucesso.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cases Tab -->
+            <div id="cases" class="tab-pane">
+                <div class="card">
+                    <h2 class="section-title">CASES DE SUCESSO</h2>
+                    <p class="mb-4">
+                        Conheça alguns dos nossos principais casos de sucesso com cirurgiões plásticos que transformaram sua expertise em negócios digitais lucrativos:
+                    </p>
+                    
+                    <!-- Case 1 -->
+                    <div class="case">
+                        <div class="case-photo">
+                            <img src="https://via.placeholder.com/280x280/f5f5f5/333333?text=Dr.+Alexandre" alt="Dr. Alexandre" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="case-info">
+                            <h3 class="case-title">Dr. Alexandre - Especialista em Rinoplastia</h3>
+                            <div class="case-grid">
+                                <div>
+                                    <h4 class="mb-2" style="font-size: 1.1rem; color: var(--primary);">Desafio</h4>
+                                    <p>
+                                        O Dr. Alexandre já era reconhecido em sua região, mas queria expandir seu alcance internacionalmente e monetizar seu conhecimento além das cirurgias presenciais.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h4 class="mb-2" style="font-size: 1.1rem; color: var(--primary);">Solução</h4>
+                                    <p>
+                                        Desenvolvemos um curso online de Rinoplastia avançada e uma estratégia de marketing digital global.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="highlight-box">
+                                <h4 class="mb-2" style="font-size: 1.1rem;">Resultados:</h4>
+                                <ul class="list mb-0">
+                                    <li>Mais de 1.200 alunos em 42 países diferentes</li>
+                                    <li>Faturamento de R$ 4,7 milhões em 12 meses</li>
+                                    <li>Reconhecimento como referência internacional em Rinoplastia</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Case 2 -->
+                    <div class="case">
+                        <div class="case-photo">
+                            <img src="https://via.placeholder.com/280x280/f5f5f5/333333?text=Dra.+Camila" alt="Dra. Camila" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="case-info">
+                            <h3 class="case-title">Dra. Camila - Especialista em Rejuvenescimento Facial</h3>
+                            <div class="case-grid">
+                                <div>
+                                    <h4 class="mb-2" style="font-size: 1.1rem; color: var(--primary);">Desafio</h4>
+                                    <p>
+                                        A Dra. Camila tinha uma agenda lotada de atendimentos, mas baixa presença digital e dificuldade em escalar seu negócio.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h4 class="mb-2" style="font-size: 1.1rem; color: var(--primary);">Solução</h4>
+                                    <p>
+                                        Criamos um programa completo de treinamento online e uma estratégia de posicionamento de marca.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="highlight-box">
+                                <h4 class="mb-2" style="font-size: 1.1rem;">Resultados:</h4>
+                                <ul class="list mb-0">
+                                    <li>Aumento de 300% no faturamento anual</li>
+                                    <li>Comunidade online com mais de 5.000 profissionais</li>
+                                    <li>Convites para palestras internacionais</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Case 3 -->
+                    <div class="case" style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
+                        <div class="case-photo">
+                            <img src="https://via.placeholder.com/280x280/f5f5f5/333333?text=Dr.+Roberto" alt="Dr. Roberto" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        <div class="case-info">
+                            <h3 class="case-title">Dr. Roberto - Especialista em Mamoplastia</h3>
+                            <div class="case-grid">
+                                <div>
+                                    <h4 class="mb-2" style="font-size: 1.1rem; color: var(--primary);">Desafio</h4>
+                                    <p>
+                                        O Dr. Roberto tinha técnicas inovadoras, mas limitadas ao seu consultório. Queria compartilhar seu método e gerar uma nova fonte de renda.
+                                    </p>
+                                </div>
+                                <div>
+                                    <h4 class="mb-2" style="font-size: 1.1rem; color: var(--primary);">Solução</h4>
+                                    <p>
+                                        Desenvolvemos uma plataforma de ensino própria e um programa de mentoria exclusivo.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="highlight-box">
+                                <h4 class="mb-2" style="font-size: 1.1rem;">Resultados:</h4>
+                                <ul class="list mb-0">
+                                    <li>Lançamento com R$ 3,2 milhões em vendas</li>
+                                    <li>Técnica reconhecida e adotada em 15 países</li>
+                                    <li>Criação de uma nova linha de produtos com sua assinatura</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Methodology Tab -->
+            <div id="methodology" class="tab-pane">
+                <div class="card">
+                    <h2 class="section-title">NOSSA METODOLOGIA</h2>
+                    <p class="mb-4">
+                        Desenvolvemos uma metodologia exclusiva para transformar a expertise de cirurgiões plásticos em negócios digitais lucrativos e escaláveis:
+                    </p>
+                    
+                    <div class="methodology-tabs">
+                        <button class="methodology-tab active" data-methodology="discovery">
+                            1. Discovery
+                        </button>
+                        <button class="methodology-tab" data-methodology="strategy">
+                            2. Estratégia
+                        </button>
+                        <button class="methodology-tab" data-methodology="production">
+                            3. Produção
+                        </button>
+                        <button class="methodology-tab" data-methodology="launch">
+                            4. Lançamento
+                        </button>
+                        <button class="methodology-tab" data-methodology="scale">
+                            5. Escala
+                        </button>
+                    </div>
+                    
+                    <!-- Discovery Content -->
+                    <div id="discovery" class="methodology-content active">
+                        <h3 style="font-size: 1.3rem; color: var(--primary);">1. Discovery</h3>
+                        <p class="mb-3">
+                            Nesta fase inicial, realizamos um diagnóstico completo da sua expertise, posicionamento atual e potencial de mercado.
+                        </p>
+                        <div class="highlight-box">
+                            <h4 class="mb-2" style="font-size: 1.1rem;">O que fazemos:</h4>
+                            <ul class="list mb-0">
+                                <li>Análise de diferenciais competitivos</li>
+                                <li>Mapeamento de público-alvo e demandas de mercado</li>
+                                <li>Identificação de oportunidades de monetização</li>
+                                <li>Pesquisa com clientes e potenciais alunos</li>
+                                <li>Avaliação da concorrência e posicionamento atual</li>
+                            </ul>
+                        </div>
+                        <p class="mt-3">
+                            Ao final desta etapa, você terá uma visão clara do seu potencial de mercado digital e quais são os melhores caminhos para monetizar sua expertise.
+                        </p>
+                    </div>
+                    
+                    <!-- Strategy Content -->
+                    <div id="strategy" class="methodology-content">
+                        <h3 style="font-size: 1.3rem; color: var(--primary);">2. Estratégia</h3>
+                        <p class="mb-3">
+                            Com base nos insights da fase de Discovery, desenvolvemos uma estratégia personalizada para transformar sua expertise em um produto digital de alto valor.
+                        </p>
+                        <div class="highlight-box">
+                            <h4 class="mb-2" style="font-size: 1.1rem;">O que fazemos:</h4>
+                            <ul class="list mb-0">
+                                <li>Definição do formato ideal do produto (curso, mentoria, comunidade)</li>
+                                <li>Estruturação de conteúdo e metodologia de ensino</li>
+                                <li>Planejamento de posicionamento de marca</li>
+                                <li>Definição de preço e modelo de monetização</li>
+                                <li>Elaboração do plano de marketing digital</li>
+                            </ul>
+                        </div>
+                        <p class="mt-3">
+                            Esta fase resulta em um plano de ação detalhado, com cronograma, investimentos necessários e projeção de resultados.
+                        </p>
+                    </div>
+                    
+                    <!-- Production Content -->
+                    <div id="production" class="methodology-content">
+                        <h3 style="font-size: 1.3rem; color: var(--primary);">3. Produção</h3>
+                        <p class="mb-3">
+                            Nesta etapa, transformamos a estratégia em um produto digital concreto, com padrão de qualidade internacional.
+                        </p>
+                        <div class="highlight-box">
+                            <h4 class="mb-2" style="font-size: 1.1rem;">O que fazemos:</h4>
+                            <ul class="list mb-0">
+                                <li>Produção audiovisual das aulas e conteúdos</li>
+                                <li>Desenvolvimento de plataforma digital personalizada</li>
+                                <li>Criação de materiais complementares</li>
+                                <li>Design de marca e identidade visual</li>
+                                <li>Desenvolvimento de site e funil de vendas</li>
+                            </ul>
+                        </div>
+                        <p class="mt-3">
+                            Ao final desta fase, você terá um produto digital completo, pronto para ser comercializado globalmente.
+                        </p>
+                    </div>
+                    
+                    <!-- Launch Content -->
+                    <div id="launch" class="methodology-content">
+                        <h3 style="font-size: 1.3rem; color: var(--primary);">4. Lançamento</h3>
+                        <p class="mb-3">
+                            Esta é a fase de apresentar seu produto ao mercado através de uma estratégia de lançamento de alto impacto.
+                        </p>
+                        <div class="highlight-box">
+                            <h4 class="mb-2" style="font-size: 1.1rem;">O que fazemos:</h4>
+                            <ul class="list mb-0">
+                                <li>Execução de campanha de marketing digital</li>
+                                <li>Gestão de tráfego pago em múltiplas plataformas</li>
+                                <li>Realização de eventos online de conversão</li>
+                                <li>Implementação de estratégias de venda</li>
+                                <li>Gestão de relacionamento com leads e clientes</li>
+                            </ul>
+                        </div>
+                        <p class="mt-3">
+                            O resultado desta fase é a conversão do seu conhecimento em faturamento real, através de um processo estruturado de vendas.
+                        </p>
+                    </div>
+                    
+                    <!-- Scale Content -->
+                    <div id="scale" class="methodology-content">
+                        <h3 style="font-size: 1.3rem; color: var(--primary);">5. Escala</h3>
+                        <p class="mb-3">
+                            Após o lançamento bem-sucedido, implementamos estratégias para escalar seus resultados e expandir globalmente.
+                        </p>
+                        <div class="highlight-box">
+                            <h4 class="mb-2" style="font-size: 1.1rem;">O que fazemos:</h4>
+                            <ul class="list mb-0">
+                                <li>Internacionalização do produto (tradução e adaptação)</li>
+                                <li>Implementação de funil de vendas evergreen</li>
+                                <li>Desenvolvimento de programas de afiliados</li>
+                                <li>Criação de modelos de assinatura recorrente</li>
+                                <li>Análise de dados e otimização contínua</li>
+                            </ul>
+                        </div>
+                        <p class="mt-3">
+                            Nesta fase, seu negócio digital se torna um ativo que gera receita continuamente, expandindo seu impacto global.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Services Tab -->
+            <div id="services" class="tab-pane">
+                <div class="card">
+                    <h2 class="section-title">O QUE OFERECEMOS</h2>
+                    <p class="mb-4">
+                        Nosso modelo de parceria inclui uma solução completa para transformar sua expertise em um negócio digital lucrativo:
+                    </p>
+                    
+                    <div class="grid grid-2 mb-4">
+                        <div>
+                            <div class="service-item">
+                                <div class="service-number">1</div>
+                                <div>
+                                    <h4 style="font-size: 1.1rem; font-weight: 600;">Consultoria Estratégica</h4>
+                                    <p class="mb-0">Análise de mercado, posicionamento de marca e definição de produto digital ideal para sua especialidade.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-item">
+                                <div class="service-number">2</div>
+                                <div>
+                                    <h4 style="font-size: 1.1rem; font-weight: 600;">Produção de Conteúdo</h4>
+                                    <p class="mb-0">Produção audiovisual profissional, edição e finalização de todas as aulas e materiais do seu curso.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-item">
+                                <div class="service-number">3</div>
+                                <div>
+                                    <h4 style="font-size: 1.1rem; font-weight: 600;">Plataforma Tecnológica</h4>
+                                    <p class="mb-0">Desenvolvimento de plataforma de ensino exclusiva, com sua marca e adaptada às necessidades do seu público.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="service-item">
+                                <div class="service-number">4</div>
+                                <div>
+                                    <h4 style="font-size: 1.1rem; font-weight: 600;">Marketing Digital</h4>
+                                    <p class="mb-0">Estratégia completa de lançamento com campanhas de tráfego pago, eventos online e funil de vendas.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-item">
+                                <div class="service-number">5</div>
+                                <div>
+                                    <h4 style="font-size: 1.1rem; font-weight: 600;">Gestão de Operações</h4>
+                                    <p class="mb-0">Suporte completo nas operações, logística, atendimento ao cliente e gestão financeira do projeto.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="service-item">
+                                <div class="service-number">6</div>
+                                <div>
+                                    <h4 style="font-size: 1.1rem; font-weight: 600;">Expansão Internacional</h4>
+                                    <p class="mb-0">Internacionalização do seu produto digital, incluindo tradução, adaptação cultural e estratégias locais.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-box mb-4">
+                        <h4 class="mb-2" style="font-size: 1.2rem; font-weight: 600;">Diferenciais do Nosso Serviço:</h4>
+                        <ul class="list mb-0">
+                            <li><strong>Experiência Comprovada:</strong> Mais de 20 lançamentos bem-sucedidos para cirurgiões plásticos</li>
+                            <li><strong>Equipe Especializada:</strong> Profissionais dedicados a cada etapa do processo</li>
+                            <li><strong>Alcance Global:</strong> Estratégias para atingir públicos em diferentes países e idiomas</li>
+                            <li><strong>Resultado Garantido:</strong> Modelo de parceria baseado em resultados</li>
+                        </ul>
+                    </div>
+                    
+                    <p>
+                        Nossa parceria é pautada na transparência e comprometimento mútuos. Você contribui com sua expertise médica e nós com nossa experiência em transformá-la em um negócio digital de sucesso.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Investment Tab -->
+            <div id="investment" class="tab-pane">
+                <div class="card">
+                    <h2 class="section-title">INVESTIMENTO</h2>
+                    <p class="mb-4">
+                        Trabalhamos com um modelo de parceria que alinha nossos interesses com os seus, garantindo comprometimento total com os resultados:
+                    </p>
+                    
+                    <div class="investment-highlight mb-5">
+                        <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1.5rem;">Modelo de Parceria Neo Doctor</h3>
+                        
+                        <div class="grid grid-2">
+                            <div class="investment-box">
+                                <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Investimento Inicial</h4>
+                                <p class="investment-amount">R$ 50.000,00</p>
+                                <p style="margin-bottom: 0; opacity: 0.9;">Parcelamento em até 10x</p>
+                            </div>
+                            
+                            <div class="investment-box">
+                                <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Participação nas Vendas</h4>
+                                <p class="investment-amount">30%</p>
+                                <p style="margin-bottom: 0; opacity: 0.9;">Das vendas líquidas do produto</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4" style="background-color: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                            <p style="margin-bottom: 0; font-weight: 500; font-size: 1.1rem; text-align: center;">
+                                Projeção média de retorno: 5x a 10x o investimento no primeiro ano
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <h3 class="section-title">O QUE ESTÁ INCLUÍDO</h3>
+                    <div class="grid grid-2 mb-4">
+                        <div>
+                            <ul class="list">
+                                <li>Consultoria estratégica completa</li>
+                                <li>Produção audiovisual profissional</li>
+                                <li>Desenvolvimento de plataforma de ensino</li>
+                                <li>Design de marca e identidade visual</li>
+                                <li>Criação de site e materiais digitais</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="list">
+                                <li>Estratégia de marketing digital</li>
+                                <li>Gestão de tráfego pago (Facebook, Instagram, Google)</li>
+                                <li>Organização de eventos online de venda</li>
+                                <li>Gestão operacional completa</li>
+                                <li>Estratégia de internacionalização</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-box mb-4">
+                        <h4 class="mb-2" style="font-size: 1.1rem;">Garantias:</h4>
+                        <ul class="list mb-0">
+                            <li>Se não atingirmos pelo menos R$ 100.000,00 em vendas no primeiro lançamento, devolvemos 50% do investimento inicial</li>
+                            <li>Contrato transparente com todas as cláusulas de resultados e responsabilidades</li>
+                            <li>Acompanhamento mensal de resultados com relatórios detalhados</li>
+                        </ul>
+                    </div>
+                    
+                    <p class="mb-4">
+                        Nossa proposta de parceria é baseada na confiança mútua e na certeza de que podemos transformar sua expertise em um negócio digital lucrativo e escalável.
+                    </p>
+                    
+                    <div class="text-center mt-5">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-handshake"></i> Quero Agendar uma Reunião
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FAQ Tab -->
+            <div id="faq" class="tab-pane">
+                <div class="card">
+                    <h2 class="section-title">PERGUNTAS FREQUENTES</h2>
+                    <p class="mb-4">
+                        Confira as dúvidas mais comuns sobre nossa parceria:
+                    </p>
+                    
+                    <div class="faq-item active">
+                        <div class="faq-question">
+                            Quanto tempo leva para criar e lançar um curso digital?
+                        </div>
+                        <div class="faq-answer">
+                            <p>O processo completo, desde a estratégia até o lançamento, leva em média de 3 a 4 meses. Esta timeline inclui todas as fases: discovery, estratégia, produção de conteúdo e o lançamento propriamente dito.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Quanto tempo eu preciso dedicar ao projeto?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Estimamos que você precise dedicar cerca de 40 horas no total, distribuídas ao longo dos meses de desenvolvimento. Estas horas incluem reuniões estratégicas, gravações de conteúdo e participação nos eventos de lançamento.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Como é feita a proteção do meu conteúdo?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Implementamos diversas camadas de proteção, incluindo termos de uso rigorosos, sistema anti-pirataria, bloqueio de downloads não autorizados e monitoramento constante. Além disso, todo o conteúdo é registrado legalmente antes da publicação.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            É preciso ter uma grande audiência nas redes sociais?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Não é necessário. Nossa estratégia inclui a captação de público através de tráfego pago e outras estratégias de marketing digital. Claro que, se você já tiver uma audiência, isso pode potencializar os resultados, mas não é um pré-requisito.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Há garantia de resultados?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sim, trabalhamos com metas mínimas de desempenho estabelecidas em contrato. Se não atingirmos pelo menos R$ 100.000,00 em vendas no primeiro lançamento, devolvemos 50% do investimento inicial. Nossa taxa de sucesso atual é de 95% nos projetos realizados.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Como funciona o processo de internacionalização?
+                        </div>
+                        <div class="faq-answer">
+                            <p>A internacionalização ocorre após o sucesso do lançamento no mercado nacional. Ela inclui tradução profissional do conteúdo, adaptação cultural, estratégias de marketing locais e parcerias com formadores de opinião nos países-alvo.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Quais os pré-requisitos para ser um parceiro?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Buscamos cirurgiões plásticos com pelo menos 5 anos de experiência, reconhecidos na sua área de atuação, com algum diferencial técnico ou metodológico, e dispostos a compartilhar seu conhecimento de forma estruturada.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Como é feita a gestão financeira do projeto?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Toda a gestão financeira é transparente e acompanhada por relatórios mensais detalhados. Utilizamos plataformas de pagamento seguras e você terá acesso em tempo real aos dados de vendas através de um dashboard exclusivo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contact Tab -->
+            <div id="contact" class="tab-pane">
+                <div class="card">
+                    <h2 class="section-title">ENTRE EM CONTATO</h2>
+                    <p class="mb-4">
+                        Estamos prontos para transformar sua expertise médica em um negócio digital lucrativo. Preencha o formulário abaixo para agendar uma reunião estratégica:
+                    </p>
+                    
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category, message in messages %}
+                                <div class="alert alert-{{ category }}">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    
+                    <form id="contactForm" class="contact-form" method="post" action="{{ url_for('submit_contact') }}">
+                        <div class="grid grid-2">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Nome completo *</label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">E-mail *</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-2">
+                            <div class="form-group">
+                                <label for="phone" class="form-label">Telefone/WhatsApp *</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="specialty" class="form-label">Especialidade</label>
+                                <input type="text" id="specialty" name="specialty" class="form-control">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Mensagem *</label>
+                            <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
+                        </div>
+                        
+                        <div class="form-group text-center mt-4">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Enviar Mensagem
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div class="grid grid-2 mt-5">
+                        <div>
+                            <h4 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem;">
+                                <i class="fas fa-map-marker-alt" style="color: var(--primary);"></i> Onde Estamos
+                            </h4>
+                            <p>
+                                Av. Paulista, 1000, São Paulo - SP<br>
+                                Brasil
+                            </p>
+                        </div>
+                        
+                        <div>
+                            <h4 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem;">
+                                <i class="fas fa-envelope" style="color: var(--primary);"></i> Contato Direto
+                            </h4>
+                            <p>
+                                Email: contato@neodoctor.com.br<br>
+                                Telefone: +55 (11) 3000-0000
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; {{ current_year }} Neo Doctor - Todos os direitos reservados</p>
+            <p>Transformando Cirurgiões Plásticos em Líderes Digitais Globais</p>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
