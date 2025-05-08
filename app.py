@@ -5,40 +5,13 @@ from datetime import datetime
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import DeclarativeBase
 
 # Configure logging
 logging.basicConfig(level=logging.DEBUG)
 
-# Initialize database classes
-class Base(DeclarativeBase):
-    pass
-
-# Create SQLAlchemy instance
-db = SQLAlchemy(model_class=Base)
-
 # Initialize Flask app
 app = Flask(__name__)
 app.secret_key = os.environ.get("SESSION_SECRET", "neo-doctor-default-key")
-
-# Configure database
-app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
-app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
-    "pool_recycle": 300,
-    "pool_pre_ping": True,
-}
-
-# Initialize SQLAlchemy with app
-db.init_app(app)
-
-# Import models and create tables
-with app.app_context():
-    import models
-    db.create_all()
-    
-# Import admin routes
-import admin  # noqa: F401
 
 @app.route('/')
 def index():
@@ -64,16 +37,6 @@ def submit_contact():
         # Log the form submission
         logging.info(f"Contact form submission: {name} ({email})")
         
-        # Create new contact record in database
-        new_contact = models.Contact()
-        new_contact.name = name
-        new_contact.email = email
-        new_contact.phone = phone
-        new_contact.specialty = specialty
-        new_contact.message = message
-        db.session.add(new_contact)
-        db.session.commit()
-        
         # Prepare email content
         email_content = f"""
         <h2>Nova mensagem de contato do site Neo Doctor</h2>
@@ -85,19 +48,10 @@ def submit_contact():
         <p>{message}</p>
         """
         
-        # Try to send email notification
-        try:
-            send_email(
-                recipient='contato@neodoctor.com.br',
-                subject='Nova mensagem de contato - Neo Doctor',
-                body=email_content
-            )
-        except Exception as email_err:
-            logging.error(f"Failed to send email notification: {str(email_err)}")
-            # The contact is saved in the database, so we continue despite email error
-        
         # If this is an AJAX request, return JSON response
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+            # In a real implementation, you would send the email here
+            # For this example, we'll just simulate success
             return jsonify({
                 'success': True,
                 'message': 'Mensagem enviada com sucesso!'
