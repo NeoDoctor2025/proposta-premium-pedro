@@ -576,6 +576,40 @@ header h2 {
     margin-bottom: 0;
 }
 
+/* Lead Quality Example */
+.lead-quality-example {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+.lead-quality-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1.2rem;
+}
+
+.lead-quality-box {
+    background-color: white;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 1.5rem;
+}
+
+.lead-quality-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.lead-quality-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
 /* Contract Section */
 .contract-section {
     margin-top: 2rem;
