@@ -408,6 +408,162 @@ header h2 {
     }
 }
 
+/* Investment New Style */
+.investment-new-container {
+    margin-top: 1rem;
+}
+
+.investment-header {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    color: var(--primary);
+}
+
+.investment-initial-section {
+    background: linear-gradient(135deg, #ff5722, #e9361d);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    color: white;
+    margin-bottom: 2.5rem;
+}
+
+.investment-initial-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .investment-initial-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.investment-box-new {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: var(--radius-sm);
+}
+
+.investment-subheader {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.investment-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.investment-description {
+    margin-bottom: 0;
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.investment-division-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .investment-division-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.division-box {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 1.2rem;
+    border-radius: var(--radius-sm);
+    text-align: center;
+}
+
+.division-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.division-percentage {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+}
+
+.division-note {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+    opacity: 0.8;
+}
+
+.investment-services-section {
+    margin-bottom: 2rem;
+}
+
+.investment-services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .investment-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.service-item-new {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.service-number-new {
+    background-color: var(--primary);
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.service-content {
+    flex: 1;
+}
+
+.service-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.service-description {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    color: #555;
+}
+
+.contract-section {
+    margin-top: 2rem;
+}
+
+.contract-duration {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
 /* Case Studies - New Format */
 .case-study {
     display: flex;
