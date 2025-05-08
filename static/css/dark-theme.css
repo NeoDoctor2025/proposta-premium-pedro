@@ -1,0 +1,91 @@
+/* Dark Theme Enhancement for Neo Doctor */
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    background-image: url('../assets/grid-pattern.svg');
+    background-repeat: repeat;
+}
+
+.card {
+    background-color: var(--dark);
+    border-top: 4px solid var(--primary);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card h2, .card h3, .card h4, p, li {
+    color: var(--white);
+}
+
+.tab-content {
+    background-color: var(--black);
+}
+
+.section-title {
+    color: var(--primary);
+}
+
+.tabs-nav {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.highlight-box {
+    background-color: rgba(255, 87, 34, 0.15);
+    border-left: 4px solid var(--primary);
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--white);
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+}
+
+.form-label {
+    color: var(--white);
+}
+
+/* Custom accent colors for dark theme */
+.accent-gradient {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Dark theme case study enhancements */
+.case {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.case-title {
+    color: var(--white);
+}
+
+/* FAQ dark theme */
+.faq-question {
+    color: var(--white);
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Service items dark theme */
+.service-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.service-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Footer dark theme */
+footer {
+    background: var(--black);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
