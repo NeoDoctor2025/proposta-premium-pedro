@@ -432,6 +432,8 @@ header h2 {
     .case-left {
         margin-bottom: 0;
         flex: 0 0 200px;
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -445,6 +447,7 @@ header h2 {
     border-radius: var(--radius-md);
     object-fit: cover;
     box-shadow: var(--shadow-sm);
+    margin: 0 auto;
 }
 
 .case-doctor-name {
