@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta de Parceria - Neo Doctor</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(to right, #ff5722, #e91e63);
+            color: white;
+            padding: 2.5rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        header h2 {
+            font-size: 1.3rem;
+            font-weight: 400;
+            opacity: 0.95;
+        }
+        
+        /* Navegação por abas */
+        .tabs-nav {
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        
+        .tabs-nav .container {
+            display: flex;
+        }
+        
+        .tab-button {
+            padding: 1.2rem 1.5rem;
+            background: none;
+            border: none;
+            font-weight: 500;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .tab-button:hover {
+            color: #ff5722;
+        }
+        
+        .tab-button.active {
+            color: #ff5722;
+            border-bottom: 2px solid #ff5722;
+            font-weight: 600;
+        }
+        
+        /* Conteúdo das abas */
+        .tab-content {
+            padding: 2.5rem 0;
+        }
+        
+        .tab-pane {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        .tab-pane.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        /* Cards e elementos de conteúdo */
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .section-title {
+            color: #ff5722;
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        .highlight-box {
+            background-color: #fff3e0;
+            border-left: 4px solid #ff5722;
+            padding: 1.2rem;
+            margin: 1.2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .list {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin: 0.8rem 0;
+        }
+        
+        .list li {
+            margin-bottom: 0.7rem;
+            position: relative;
+            padding-left: 0.3rem;
+        }
+        
+        /* Metodologia */
+        .methodology-tabs {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 1.8rem;
+        }
+        
+        .methodology-tab {
+            padding: 0.9rem 1.2rem;
+            background: none;
+            border: none;
+            font-weight: 500;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .methodology-tab.active {
+            color: #ff5722;
+            border-bottom: 2px solid #ff5722;
+            font-weight: 600;
+        }
+        
+        .methodology-content {
+            display: none;
+        }
+        
+        .methodology-content.active {
+            display: block;
+        }
+        
+        /* Diagrama de processo */
+        .process-diagram {
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.8rem 0;
+            overflow-x: auto;
+        }
+        
+        /* Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.8rem;
+        }
+        
+        @media (min-width: 768px) {
+            .grid-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .grid-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .grid-4 {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        /* Foto placeholder */
+        .team-photo {
+            height: 280px;
+            width: 100%;
+        }
+        
+        .founder-photo {
+            width: 180px;
+            height: 230px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .case-photo {
+            width: 280px;
+            height: 280px;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        /* Case de sucesso */
+        .case {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 3rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        @media (min-width: 768px) {
+            .case {
+                flex-direction: row;
+                gap: 2rem;
+            }
+        }
+        
+        .case-info {
+            flex: 1;
+        }
+        
+        .case-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: #333;
+        }
+        
+        .case-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .case-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        /* Investimento */
+        .investment-highlight {
+            background: linear-gradient(to right, #ff5722, #e91e63);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 5px 15px rgba(255, 87, 34, 0.2);
+        }
+        
+        .investment-box {
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+        
+        .investment-amount {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0.5rem 0;
+        }
+        
+        .service-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            transition: all 0.3s;
+        }
+        
+        .service-item:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .service-number {
+            background-color: #fff3e0;
+            color: #ff5722;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            margin-right: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(to right, #ff5722, #e91e63);
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            margin-top: 3rem;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer p {
+            margin: 0.3rem 0;
+        }
+        
+        /* Melhoria na tipografia */
+        p, li {
+            font-weight: 400;
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.7;
+        }
+        
+        h3, h4, h5 {
+            color: #333;
+            line-height: 1.4;
+        }
+        
+        strong {
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .mb-1 { margin-bottom: 0.5rem; }
+        .mb-2 { margin-bottom: 1rem; }
+        .mb-3 { margin-bottom: 1.5rem; }
+        .mb-4 { margin-bottom: 2rem; }
+        .mb-5 { margin-bottom: 2.5rem; }
+        
+        .mt-1 { margin-top: 0.5rem; }
+        .mt-2 { margin-top: 1rem; }
+        .mt-3 { margin-top: 1.5rem; }
+        .mt-4 { margin-top: 2rem; }
+        .mt-5 { margin-top: 2.5rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>PROPOSTA DE PARCERIA NEO DOCTOR</h1>
+            <h2>Transforme sua Expertise Médica em um Negócio Digital Lucrativo</h2>
+        </div>
+    </header>
+    
+    <div class="tabs-nav">
+        <div class="container">
+            <button class="tab-button active" onclick="showTab('about')">Quem Somos</button>
+            <button class="tab-button" onclick="showTab('cases')">Cases de Sucesso</button>
+            <button class="tab-button" onclick="showTab('methodology')">Nossa Metodologia</button>
+            <button class="tab-button" onclick="showTab('services')">O Que Oferecemos</button>
+            <button class="tab-button" onclick="showTab('investment')">Investimento</button>
+            <button class="tab-button" onclick="showTab('faq')">FAQ</button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="tab-content">
+            <!-- Quem Somos -->
+            <div id="about" class="tab-pane active">
+                <div class="card">
+                    <h2 class="section-title">QUEM SOMOS</h2>
+                    <div class="mb-4">
+                        <p class="mb-3">
+                            Somos uma <strong>agência de lançamentos digitais especializada em criação de cursos para cirurgiões plásticos</strong>, com presença global e experiência comprovada:
+                        </p>
+                        <ul class="list">
+                            <li>Atuação em mais de 59 países com serviços em múltiplos idiomas</li>
+                            <li>Criadores do maior case de sucesso mundial em Rinoplastia</li>
+                            <li>Desde 2020, focados exclusivamente na construção de negócios digitais para cirurgiões plásticos renomados</li>
+                        </ul>
+                    </div>
+                    
+                    <h3 class="section-title mb-3" style="font-size: 1.4rem;">NOSSA MISSÃO</h3>
+                    <div class="highlight-box mb-4">
+                        <p style="font-size: 1.2rem; font-weight: 500;">Transformar Cirurgiões Plásticos Renomados em Líderes Digitais Globais</p>
+                    </div>
+                    <p class="mb-5">
+                        Acreditamos que sua expertise merece alcance mundial. Nossa missão é construir uma presença digital que reflita a excelência do seu trabalho, expandindo seu impacto e reconhecimento internacional.
+                    </p>
+                    
+                    <h3 class="section-title mt-5 mb-4" style="font-size: 1.4rem;">QUEM ESTÁ POR TRÁS?</h3>
+                    <div style="display: flex; flex-direction: column; gap: 2rem;">
+                        <div class="mb-2" style="display: flex; flex-direction: column; align-items: center; text-align: center;">
+                            <div class="founder-photo mb-3">
+                                <img src="humberto.png" alt="Humberto Lopes" style="width: 100%; height: 100%; object-fit: cover;">
+                            </div>
+                            <h4 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 0.5rem;">Humberto Lopes</h4>
+                        </div>
+                        <div>
+                            <p class="mb-3">Profissional com ampla experiência em marketing digital e lançamentos de produtos online, atuando no segmento desde 2008.</p>
+                            
+                            <h5 style="font-weight: 600; font-size: 1.1rem; margin: 1.5rem 0 1rem;">Trajetória com Cirurgiões Plásticos:</h5>
+                            <ul class="list">
+                                <li>Mentor de Cirurgiões Plásticos</li>
+                                <li>Fundador do Ultimate Camp (bootcamp presencial de lançamentos digitais)</li>
+                                <li>Participante de Masterminds de alto nível (investimento anual de múltiplos 6 dígitos)</li>
+                                <li>Visão de Futuro: Consolidar a Neo Doctor como a maior agência de lançamentos digitais para cirurgiões plásticos do mundo nos próximos 12 meses</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cases de Sucesso -->
+            <div id="cases" class="tab-pane">
+                <div class="card">
+                    <h2 class="section-title">CASES DE SUCESSO</h2>
+                    
+                    <div class="case">
+                        <div class="case-photo">
+                            <img src="Dr_Fernando_Nakamura.png" alt="Dr. Fernando Nakamura" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                        </div>
+                        <div class="case-info">
+                            <h3 class="case-title">Dr. Fernando Nakamura | Especialista em Rinoplastia</h3>
+                            <div class="case-grid">
+                                <div>
+                                    <p class="mb-2"><strong>Início da parceria:</strong> Março de 2020</p>
+                                    <p class="mb-2"><strong>Lançamentos realizados:</strong> 7</p>
+                                    <p class="mb-2"><strong>Faturamento:</strong> De 0 para aproximadamente R$ 24 milhões</p>
+                                    <p class="mb-2"><strong>Investimento total:</strong> Aproximadamente R$ 800 mil</p>
+                                </div>
+                                <div>
+                                    <p class="mb-2"><strong>ROAS:</strong> 30x</p>
+                                    <p class="mb-2"><strong>Alunos:</strong> 2.076 em 59 países</p>
+                                    <p class="mb-2"><strong>Idiomas:</strong> Português, Inglês e Espanhol</p>
+                                    <p class="mb-2"><strong>Resultado:</strong> De melhor cirurgião de Brasília para referência mundial em Rinoplastia Híbrida</p>
+                                </div>
+                            </div>
+                            <h4 class="mb-2" style="font-weight: 600; font-size: 1.1rem;">O que construímos:</h4>
+                            <ul class="list" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 0.25rem;">
+                                <li>Imersão presencial em Miami (terceira edição - HRET) - $8.000,00</li>
+                                <li>Curso presencial mensal para 4 médicos (5 em 1) - R$ 60.000,00</li>
+                                <li>Metaverso e NFT</li>
+                                <li>Comunidade global de alunos</li>
+                                <li>5 cursos online</li>
+                                <li>Instagram: @drnakamura</li>
+                                <li>Plataforma: Perface Academy</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="case">
+                        <div class="case-photo">
+                            <img src="Dr_Marcelo._Curypng.png" alt="Dr. Marcelo Cury" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                        </div>
+                        <div class="case-info">
+                            <h3 class="case-title">Dr. Marcelo Cury | Especialista em Blefaroplastia</h3>
+                            <div class="case-grid">
+                                <div>
+                                    <p class="mb-2"><strong>Início da parceria:</strong> Junho de 2023</p>
+                                    <p class="mb-2"><strong>Lançamentos realizados:</strong> 4</p>
+                                    <p class="mb-2"><strong>Investimento:</strong> R$ 62 mil</p>
+                                    <p class="mb-2"><strong>Faturamento:</strong> De 0 para aproximadamente R$ 1,3 milhão</p>
+                                </div>
+                                <div>
+                                    <p class="mb-2"><strong>ROAS:</strong> 23x</p>
+                                    <p class="mb-2"><strong>Alunos:</strong> 137 em 14 países</p>
+                                    <p class="mb-2"><strong>Idiomas:</strong> Português e Espanhol</p>
+                                    <p class="mb-2"><strong>Resultado:</strong> Reconhecido como o melhor cirurgião de pálpebras do Brasil</p>
+                                </div>
+                            </div>
+                            <h4 class="mb-2" style="font-weight: 600; font-size: 1.1rem;">O que construímos:</h4>
+                            <ul class="list">
+                                <li>1 curso presencial que começa em novembro no Rio de Janeiro - $4.8k</li>
+                                <li>1 cursos online principal - $1,900.00</li>
+                                <li>1 Curso de Downsell - $727.00</li>
+                                <li>Instagram: @drmarcelocury</li>
+                                <li>Curso presencial novembro 2024: The Art of Eyelid Surgery Practical</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="case" style="margin-bottom: 0; border-bottom: none;">
+                        <div class="case-photo">
+                            <img src="Dr_Roberio.jpg" alt="Dr. Roberio Brandão" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                        </div>
+                        <div class="case-info">
+                            <h3 class="case-title">Dr. Roberio Brandão | Especialista em Lifting Facial</h3>
+                            <div class="case-grid">
+                                <div>
+                                    <p class="mb-2"><strong>Início da parceria:</strong> Março de 2024</p>
+                                    <p class="mb-2"><strong>Lançamentos realizados:</strong> 2</p>
+                                    <p class="mb-2"><strong>Investimento:</strong> R$ 50 mil</p>
+                                    <p class="mb-2"><strong>Faturamento:</strong> De 0 para R$ 1,1 milhão</p>
+                                </div>
+                                <div>
+                                    <p class="mb-2"><strong>ROAS:</strong> 22x</p>
+                                    <p class="mb-2"><strong>Alunos:</strong> 137 em 14 países</p>
+                                    <p class="mb-2"><strong>Idiomas:</strong> Português e Espanhol</p>
+                                    <p class="mb-2"><strong>Resultado:</strong> Reconhecido como o melhor cirurgião de Facelift do Brasil</p>
+                                </div>
+                            </div>
+                            <h4 class="mb-2" style="font-weight: 600; font-size: 1.1rem;">O que construímos:</h4>
+                            <ul class="list">
+                                <li>3 cursos online</li>
+                                <li>Instagram: @drroberiobrandao</li>
+                                <li>Site: Facelift Mastery</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- O Que Oferecemos -->
+            <div id="services" class="tab-pane">
+                <div class="card">
+                    <h2 class="section-title">O QUE OFERECEMOS</h2>
+                    
+                    <p class="mb-4">
+                        Nossa oferta é um <strong>serviço completo e personalizado</strong> que transforma sua expertise em um negócio digital lucrativo, proporcionando visibilidade global e posicionamento como autoridade em sua especialidade.
+                    </p>
+                    
+                    <h3 class="section-title mb-3" style="font-size: 1.4rem;">SERVIÇOS PRINCIPAIS</h3>
+                    
+                    <div class="grid grid-3 mb-5">
+                        <div class="highlight-box" style="height: 100%;">
+                            <h3 style="font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem;">Estratégia de Marketing</h3>
+                            <p>Planejamento personalizado para sua especialidade</p>
+                        </div>
+                        
+                        <div class="highlight-box" style="height: 100%;">
+                            <h3 style="font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem;">Produção de Conteúdo</h3>
+                            <p>Gravação e edição profissional de cursos</p>
+                        </div>
+                        
+                        <div class="highlight-box" style="height: 100%;">
+                            <h3 style="font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem;">Design e Branding</h3>
+                            <p>Identidade visual premium para seu negócio digital</p>
+                        </div>
+                        
+                        <div class="highlight-box" style="height: 100%;">
+                            <h3 style="font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem;">Gestão de Campanhas</h3>
+                            <p>Tráfego pago e estratégias de conversão</p>
+                        </div>
+                        
+                        <div class="highlight-box" style="height: 100%;">
+                            <h3 style="font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem;">Plataforma de Curso</h3>
+                            <p>Ambiente de aprendizado personalizado</p>
+                        </div>
+                        
+                        <div class="highlight-box" style="height: 100%;">
+                            <h3 style="font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem;">Relatórios detalhados</h3>
+                            <p>Análise de performance e métricas</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin: 3rem 0; text-align: center;" class="mb-5">
+                        <h3 class="section-title text-center" style="font-size: 1.4rem;">JORNADA DE COMPRA DO ALUNO</h3>
+                        <p style="margin-bottom: 1.5rem;">Processo otimizado para maximizar conversões e proporcionar excelente experiência:</p>
+                        <img src="compra_aluno.png" alt="Jornada de Compra do Aluno" style="max-width: 100%; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 8px;">
+                    </div>
+                    
+                    <h3 class="section-title mt-5 mb-4" style="font-size: 1.4rem;">RESPONSABILIDADES DO ESPECIALISTA</h3>
+                    
+                    <div class="mb-4">
+                        <p class="mb-3">Para garantir o sucesso da parceria, é fundamental que o médico especialista:</p>
+                        
+                        <ol style="list-style-type: decimal; margin-left: 1.5rem;">
+                            <li class="mb-2">Disponibilize seu tempo para <strong>gravações e criação de conteúdo</strong> (cerca de 40 horas no total)</li>
+                            <li class="mb-2">Participe de <strong>reuniões estratégicas semanais</strong> de 1h durante o período de implementação</li>
+                            <li class="mb-2">Forneça <strong>materiais técnicos e científicos</strong> para embasar o conteúdo</li>
+                            <li class="mb-2">Valide scripts e materiais de <strong>marketing antes de sua publicação</strong></li>
+                            <li class="mb-2">Grave <strong>vídeos promocionais</strong> e de engajamento durante o período de lançamento</li>
+                        </ol>
+                    </div>
+                    
+                    <h3 class="section-title mt-5 mb-4" style="font-size: 1.4rem;">NOSSA EQUIPE DE ESPECIALISTAS</h3>
+                    
+                    <div class="mb-4">
+                        <p class="mb-3">Para garantir resultados excepcionais, seu projeto contará com uma equipe completa de especialistas:</p>
+                        
+                        <div class="grid grid-2 mb-4">
+                            <div>
+                                <ul class="list">
+                                    <li>Produtor de Vídeo</li>
+                                    <li>Designer Gráfico</li>
+                                    <li>Especialista em Marketing</li>
+                                    <li>Especialista em Tráfego Pago</li>
+                                    <li>Copywriter</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <ul class="list">
+                                    <li>Desenvolvedor Web</li>
+                                    <li>Especialista em CRM</li>
+                                    <li>Gestor de Projetos</li>
+                                    <li>Especialista em Conteúdo Educacional</li>
+                                    <li>Suporte Técnico</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div style="background-color: #fff3e0; padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+                            <h3 style="text-align: center; font-size: 1.3rem; margin-bottom: 1.5rem; font-weight: 600;">Foto da Equipe</h3>
+                            <div class="team-photo">
+                                <img src="time.png" alt="Equipe Neo Doctor" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Nosso Time -->
+            <div id="team" class="tab-pane">
+                <div class="card">
+                    <h2 class="section-title">NOSSO TIME ESPECIALIZADO</h2>
+                    
+                    <p style="margin-bottom: 1rem;">Contamos com uma equipe de profissionais que já entendem profundamente o universo do cirurgião plástico:</p>
+                    
+                    <div style="background-color: #fff3e0; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                        <h3 style="text-align: center; font-size: 1.3rem; margin-bottom: 1.5rem;">Foto da Equipe</h3>
+                        <div class="team-photo">
+                            <img src="time.png" alt="Equipe Neo Doctor" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-3">
+                        <div style="background-color: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-radius: 8px; padding: 1rem;">
+                            <h4 style="color: #ff5722; font-weight: bold; margin-bottom: 0.5rem;">Webdesigner</h4>
+                            <p>Criação de interfaces intuitivas e esteticamente alinhadas com sua identidade</p>
+                        </div>
+                        <div style="background-color: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-radius: 8px; padding: 1rem;">
+                            <h4 style="color: #ff5722; font-weight: bold; margin-bottom: 0.5rem;">Editor de vídeos</h4>
+                            <p>Produção audiovisual de alta qualidade para seus conteúdos</p>
+                        </div>
+                        <div style="background-color: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-radius: 8px; padding: 1rem;">
+                            <h4 style="color: #ff5722; font-weight: bold; margin-bottom: 0.5rem;">Copywriter</h4>
+                            <p>Desenvolvimento de textos persuasivos que convertem</p>
+                        </div>
+                        <div style="background-color: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-radius: 8px; padding: 1rem;">
+                            <h4 style="color: #ff5722; font-weight: bold; margin-bottom: 0.5rem;">Especialista em infraestrutura</h4>
+                            <p>Garantia de plataformas robustas e seguras</p>
+                        </div>
+                        <div style="background-color: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-radius: 8px; padding: 1rem;">
+                            <h4 style="color: #ff5722; font-weight: bold; margin-bottom: 0.5rem;">Estrategista</h4>
+                            <p>Planejamento de campanhas com foco em resultados</p>
+                        </div>
+                        <div style="background-color: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-radius: 8px; padding: 1rem;">
+                            <h4 style="color: #ff5722; font-weight: bold; margin-bottom: 0.5rem;">Consultores de sucesso</h4>
+                            <p>Acompanhamento personalizado de sua jornada</p>
+                        </div>
+                        <div style="background-color: white; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-radius: 8px; padding: 1rem;">
+                            <h4 style="color: #ff5722; font-weight: bold; margin-bottom: 0.5rem;">Gestora de projetos dedicada</h4>
+                            <p>Coordenação eficiente de todas as etapas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Nossa Metodologia -->
+            <div id="methodology" class="tab-pane">
+                <div class="card">
+                    <h2 class="section-title">NOSSA METODOLOGIA</h2>
+                    
+                    <p class="mb-4">
+                        Aplicamos uma abordagem sistemática e comprovada, desenvolvida especificamente para cirurgiões plásticos que desejam estabelecer uma presença digital lucrativa e impactante.
+                    </p>
+                    
+                    <div class="methodology-tabs">
+                        <button class="methodology-tab active" onclick="showMethodologyContent('planning')">Preparação e Planejamento</button>
+                        <button class="methodology-tab" onclick="showMethodologyContent('execution')">Rotina e Entrega</button>
+                    </div>
+                    
+                    <div id="planning" class="methodology-content active">
+                        <h3 style="text-align: center; color: #ff5722; font-size: 1.3rem; margin-bottom: 1.5rem; font-weight: 600;">Processo de Preparação e Planejamento</h3>
+                        
+                        <div class="process-diagram" style="text-align: center; background-color: transparent; padding: 0;">
+                            <img src="processo_preparacao.png" alt="Processo de Preparação e Planejamento" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        </div>
+                        
+                        <div class="grid grid-2 mt-4">
+                            <div>
+                                <h4 style="font-weight: 600; font-size: 1.1rem; margin-bottom: 1rem;">Fase 1: Planejamento Estratégico</h4>
+                                <ul class="list">
+                                    <li>Análise do mercado e concorrência</li>
+                                    <li>Definição de diferenciais competitivos</li>
+                                    <li>Desenvolvimento de estratégia de posicionamento</li>
+                                    <li>Planejamento de cronograma de lançamento</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 style="font-weight: 600; font-size: 1.1rem; margin-bottom: 1rem;">Fase 2: Criação de Conteúdo</h4>
+                                <ul class="list">
+                                    <li>Definição de currículo e formato de curso</li>
+                                    <li>Gravação profissional de aulas</li>
+                                    <li>Edição e pós-produção</li>
+                                    <li>Preparação de materiais complementares</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 style="font-weight: 600; font-size: 1.1rem; margin-bottom: 1rem;">Fase 3: Infraestrutura Digital</h4>
+                                <ul class="list">
+                                    <li>Desenvolvimento de plataforma de ensino</li>
+                                    <li>Integração de sistemas de pagamento</li>
+                                    <li>Criação de funis de vendas</li>
+                                    <li>Configuração de automações</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 style="font-weight: 600; font-size: 1.1rem; margin-bottom: 1rem;">Fase 4: Estratégia de Marketing</h4>
+                                <ul class="list">
+                                    <li>Desenvolvimento de materiais promocionais</li>
+                                    <li>Planejamento de campanhas em mídias sociais</li>
+                                    <li>Criação de conteúdo para aquecimento de lista</li>
+                                    <li>Estabelecimento de KPIs e métricas de sucesso</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="execution" class="methodology-content">
+                        <h3 style="text-align: center; color: #ff5722; font-size: 1.3rem; margin-bottom: 1.5rem; font-weight: 600;">Rotina e Entrega (Pós Bootcamp)</h3>
+                        
+                        <div class="process-diagram" style="text-align: center; background-color: transparent; padding: 0;">
+                            <img src="rotina.png" alt="Rotina e Entrega" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                        </div>
+                        
+                        <div class="grid grid-2 mt-4">
+                            <div>
+                                <h4 style="font-weight: 600; font-size: 1.1rem; margin-bottom: 1rem;">Gestão de Campanhas</h4>
+                                <ul class="list">
+                                    <li>Monitoramento diário de performance</li>
+                                    <li>Otimização contínua de anúncios</li>
+                                    <li>Ajustes de segmentação e bidding</li>
+                                    <li>Testes A/B de criativos e cópias</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 style="font-weight: 600; font-size: 1.1rem; margin-bottom: 1rem;">Suporte à Comunidade</h4>
+                                <ul class="list">
+                                    <li>Gestão de fóruns e grupos de discussão</li>
+                                    <li>Resolução de dúvidas de alunos</li>
+                                    <li>Feedback contínuo e melhorias</li>
+                                    <li>Eventos ao vivo de Q&A</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 style="font-weight: 600; font-size: 1.1rem; margin-bottom: 1rem;">Análise de Dados</h4>
+                                <ul class="list">
+                                    <li>Relatórios semanais de performance</li>
+                                    <li>Análise de conversões e funil</li>
+                                    <li>Identificação de oportunidades de melhoria</li>
+                                    <li>Ajustes estratégicos baseados em dados</li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h4 style="font-weight: 600; font-size: 1.1rem; margin-bottom: 1rem;">Expansão e Escala</h4>
+                                <ul class="list">
+                                    <li>Planejamento de novos lançamentos</li>
+                                    <li>Expansão para novos mercados e idiomas</li>
+                                    <li>Desenvolvimento de produtos complementares</li>
+                                    <li>Estratégias de upsell e cross-sell</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Investimento -->
+            <div id="investment" class="tab-pane">
+                <div class="card">
+                    <h2 class="section-title">INVESTIMENTO</h2>
+                    
+                    <div class="investment-highlight">
+                        <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem; text-align: center;">PROGRAMA COMPLETO DE TRANSFORMAÇÃO DIGITAL</h3>
+                        
+                        <div class="investment-box mb-4">
+                            <p style="text-align: center; font-size: 1.1rem;">Investimento Único</p>
+                            <p class="investment-amount" style="text-align: center;">R$ 120.000,00</p>
+                            <p style="text-align: center; font-size: 0.9rem;">Parcelado em até 12x de R$ 10.000,00</p>
+                        </div>
+                        
+                        <div>
+                            <p style="font-size: 1.1rem; font-weight: 500; margin-bottom: 1rem; text-align: center;">O que está incluído:</p>
+                            <ul style="list-style-type: none; padding: 0;">
+                                <li style="display: flex; align-items: center; margin-bottom: 0.8rem;">
+                                    <span style="margin-right: 0.5rem;">✓</span>
+                                    <span>Estratégia personalizada de marketing digital</span>
+                                </li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.8rem;">
+                                    <span style="margin-right: 0.5rem;">✓</span>
+                                    <span>Produção completa de curso online</span>
+                                </li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.8rem;">
+                                    <span style="margin-right: 0.5rem;">✓</span>
+                                    <span>Plataforma de ensino personalizada</span>
+                                </li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.8rem;">
+                                    <span style="margin-right: 0.5rem;">✓</span>
+                                    <span>Gestão de campanhas de tráfego pago</span>
+                                </li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.8rem;">
+                                    <span style="margin-right: 0.5rem;">✓</span>
+                                    <span>Design e branding premium</span>
+                                </li>
+                                <li style="display: flex; align-items: center; margin-bottom: 0.8rem;">
+                                    <span style="margin-right: 0.5rem;">✓</span>
+                                    <span>Suporte dedicado por 12 meses</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3 class="section-title mt-5 mb-4" style="font-size: 1.4rem;">CRONOGRAMA DE IMPLEMENTAÇÃO</h3>
+                    
+                    <div>
+                        <div class="service-item">
+                            <div class="service-number">1</div>
+                            <div>
+                                <h4 style="font-weight: 600; font-size: 1.1rem;">Semana 1-2: Planejamento Estratégico</h4>
+                                <p>Definição de posicionamento, público-alvo e estratégia de lançamento</p>
+                            </div>
+                        </div>
+                        
+                        <div class="service-item">
+                            <div class="service-number">2</div>
+                            <div>
+                                <h4 style="font-weight: 600; font-size: 1.1rem;">Semana 3-6: Produção de Conteúdo</h4>
+                                <p>Gravação, edição e finalização do curso</p>
+                            </div>
+                        </div>
+                        
+                        <div class="service-item">
+                            <div class="service-number">3</div>
+                            <div>
+                                <h4 style="font-weight: 600; font-size: 1.1rem;">Semana 7-8: Desenvolvimento de Plataforma</h4>
+                                <p>Criação de site, plataforma de ensino e materiais de marketing</p>
+                            </div>
+                        </div>
+                        
+                        <div class="service-item">
+                            <div class="service-number">4</div>
+                            <div>
+                                <h4 style="font-weight: 600; font-size: 1.1rem;">Semana 9-10: Pré-lançamento</h4>
+                                <p>Aquecimento de lista, conteúdo gratuito e estratégia de engajamento</p>
+                            </div>
+                        </div>
+                        
+                        <div class="service-item">
+                            <div class="service-number">5</div>
+                            <div>
+                                <h4 style="font-weight: 600; font-size: 1.1rem;">Semana 11-12: Lançamento</h4>
+                                <p>Execução da campanha de vendas e acompanhamento em tempo real</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-5" style="background-color: #fff3e0; padding: 1.5rem; border-radius: 8px;">
+                        <h3 style="font-weight: 600; font-size: 1.3rem; margin-bottom: 1rem; text-align: center;">POLÍTICA DE GARANTIA</h3>
+                        <p style="text-align: center; margin-bottom: 1rem;">
+                            Oferecemos garantia de satisfação condicional:
+                        </p>
+                        <ul class="list">
+                            <li>Se a campanha não atingir pelo menos R$ 300.000,00 em vendas no primeiro lançamento (desde que todas as recomendações tenham sido seguidas), devolvemos 50% do valor investido.</li>
+                            <li>Comprometimento contratual com resultados e transparência em todas as etapas.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FAQ -->
+            <div id="faq" class="tab-pane">
+                <div class="card">
+                    <h2 class="section-title">PERGUNTAS FREQUENTES</h2>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-weight: 600; font-size: 1.2rem; margin-bottom: 0.8rem; color: #ff5722;">Quanto tempo leva para ver resultados?</h3>
+                        <p>O primeiro ciclo completo de lançamento leva aproximadamente 3 meses, desde o planejamento até a conclusão das vendas. Resultados significativos são tipicamente observados a partir do primeiro lançamento.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-weight: 600; font-size: 1.2rem; margin-bottom: 0.8rem; color: #ff5722;">Qual o tempo de dedicação necessário do médico?</h3>
+                        <p>Aproximadamente 40 horas no total para gravações de conteúdo, distribuídas ao longo de 2-3 semanas, além de 1 hora semanal para reuniões estratégicas durante o período de implementação.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-weight: 600; font-size: 1.2rem; margin-bottom: 0.8rem; color: #ff5722;">Como funciona o modelo de negócio?</h3>
+                        <p>Trabalhamos com um modelo de investimento inicial fixo para desenvolvimento e implementação da estratégia. 100% do faturamento do curso é seu - não cobramos comissão sobre vendas.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-weight: 600; font-size: 1.2rem; margin-bottom: 0.8rem; color: #ff5722;">Em quais países vocês têm experiência?</h3>
+                        <p>Temos experiência global, com projetos implementados em mais de 59 países, incluindo todo o continente americano, Europa, Ásia e Oceania. Oferecemos suporte para cursos em português, inglês e espanhol.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-weight: 600; font-size: 1.2rem; margin-bottom: 0.8rem; color: #ff5722;">Quem cuida do suporte aos alunos?</h3>
+                        <p>Nossa equipe gerencia todo o suporte técnico relacionado à plataforma, acesso e questões operacionais. O suporte relacionado ao conteúdo científico é responsabilidade do especialista, mas podemos implementar sistemas para otimizar esse processo.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 style="font-weight: 600; font-size: 1.2rem; margin-bottom: 0.8rem; color: #ff5722;">Como são tratadas questões legais e regulatórias?</h3>
+                        <p>Fornecemos orientação sobre melhores práticas, mas o especialista é responsável por garantir que o conteúdo esteja em conformidade com as regulamentações médicas de seu país. Recomendamos consultoria jurídica especializada para validação final.</p>
+                    </div>
+                    
+                    <div style="margin-top: 3rem; text-align: center; padding: 2rem; background-color: #fff3e0; border-radius: 12px;">
+                        <h3 style="font-weight: 700; font-size: 1.4rem; margin-bottom: 1rem; color: #ff5722;">PRONTO PARA TRANSFORMAR SUA CARREIRA?</h3>
+                        <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">Agende uma consulta estratégica gratuita para discutir como podemos adaptar nossa metodologia à sua especialidade.</p>
+                        <a href="mailto:contato@neodoctor.com.br" style="display: inline-block; background: linear-gradient(to right, #ff5722, #e91e63); color: white; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(255, 87, 34, 0.3);">AGENDAR CONVERSA</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p style="font-weight: 600; font-size: 1.1rem; margin-bottom: 0.5rem;">Neo Doctor</p>
+            <p>Especialistas em Lançamentos Digitais para Cirurgiões Plásticos</p>
+            <p style="margin-top: 1rem;"><a href="mailto:contato@neodoctor.com.br" style="color: white; text-decoration: underline;">contato@neodoctor.com.br</a></p>
+            <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.8;">© 2024 Neo Doctor. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Funções para navegação de abas
+        function showTab(tabId) {
+            // Esconde todas as abas
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            tabPanes.forEach(pane => {
+                pane.classList.remove('active');
+            });
+            
+            // Remove a classe ativa de todos os botões
+            const tabButtons = document.querySelectorAll('.tab-button');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            // Mostra a aba selecionada
+            document.getElementById(tabId).classList.add('active');
+            
+            // Adiciona a classe ativa ao botão clicado
+            event.currentTarget.classList.add('active');
+            
+            // Rola a página para o topo da aba
+            window.scrollTo({
+                top: document.querySelector('.tab-content').offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Funções para metodologia
+        function showMethodologyContent(contentId) {
+            // Esconde todos os conteúdos de metodologia
+            const methodologyContents = document.querySelectorAll('.methodology-content');
+            methodologyContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Remove a classe ativa de todas as abas de metodologia
+            const methodologyTabs = document.querySelectorAll('.methodology-tab');
+            methodologyTabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Mostra o conteúdo selecionado
+            document.getElementById(contentId).classList.add('active');
+            
+            // Adiciona a classe ativa à aba clicada
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
