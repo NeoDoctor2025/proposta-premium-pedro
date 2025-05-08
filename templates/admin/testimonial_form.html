@@ -1,0 +1,108 @@
+{% extends 'admin/layout.html' %}
+
+{% block title %}
+    {% if testimonial %}Editar{% else %}Adicionar{% endif %} Depoimento - Neo Doctor Admin
+{% endblock %}
+
+{% block page_title %}
+    {% if testimonial %}Editar{% else %}Adicionar{% endif %} Depoimento
+{% endblock %}
+
+{% block page_actions %}
+    <a href="{{ url_for('admin_testimonials') }}" class="btn btn-secondary">
+        <i class="fas fa-arrow-left"></i> Voltar
+    </a>
+{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-body">
+            <form method="post" class="needs-validation" novalidate>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="doctor_name" class="form-label">Nome do Médico *</label>
+                        <input type="text" 
+                               class="form-control" 
+                               id="doctor_name" 
+                               name="doctor_name" 
+                               value="{{ testimonial.doctor_name if testimonial else '' }}" 
+                               required>
+                        <div class="invalid-feedback">
+                            Por favor, informe o nome do médico.
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <label for="specialty" class="form-label">Especialidade *</label>
+                        <input type="text" 
+                               class="form-control" 
+                               id="specialty" 
+                               name="specialty" 
+                               value="{{ testimonial.specialty if testimonial else '' }}" 
+                               required>
+                        <div class="invalid-feedback">
+                            Por favor, informe a especialidade do médico.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="content" class="form-label">Depoimento *</label>
+                    <textarea class="form-control" 
+                              id="content" 
+                              name="content" 
+                              rows="5" 
+                              required>{{ testimonial.content if testimonial else '' }}</textarea>
+                    <div class="invalid-feedback">
+                        Por favor, informe o conteúdo do depoimento.
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="image_url" class="form-label">URL da Imagem</label>
+                        <input type="text" 
+                               class="form-control" 
+                               id="image_url" 
+                               name="image_url" 
+                               value="{{ testimonial.image_url if testimonial else '' }}">
+                        <div class="form-text">
+                            URL da foto do médico. Se não informada, será exibido um ícone padrão.
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6 mb-3">
+                        <label for="stars" class="form-label">Avaliação</label>
+                        <select class="form-select" id="stars" name="stars">
+                            {% for i in range(1, 6) %}
+                                <option value="{{ i }}" 
+                                        {% if testimonial and testimonial.stars == i %}selected{% endif %}
+                                        {% if not testimonial and i == 5 %}selected{% endif %}>
+                                    {{ i }} estrela{% if i != 1 %}s{% endif %}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="mb-3 form-check">
+                    <input type="checkbox" 
+                           class="form-check-input" 
+                           id="is_featured" 
+                           name="is_featured" 
+                           {% if testimonial and testimonial.is_featured %}checked{% endif %}>
+                    <label class="form-check-label" for="is_featured">
+                        Destacar na página inicial
+                    </label>
+                </div>
+                
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> 
+                        {% if testimonial %}Salvar Alterações{% else %}Adicionar Depoimento{% endif %}
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

@@ -1,5 +1,6 @@
-from app import db
 from datetime import datetime
+from sqlalchemy import Column, Integer, String, Text, DateTime, Boolean
+from app import db
 
 class Contact(db.Model):
     """
