@@ -1,12 +1,18 @@
-/* Neo Doctor - Modern Redesign Styles */
+/* Neo Doctor - Premium Modern Redesign Styles */
 :root {
     --primary: #ff5722;
     --secondary: #e91e63;
-    --dark: #333333;
+    --dark: #222222;
     --text: #444444;
     --light: #f5f5f5;
     --light-accent: #fff3e0;
     --white: #ffffff;
+    --black: #121212;
+    --orange: #ff5722;
+    --red: #e91e63;
+    --gray-light: #f8f8f8;
+    --gray: #e0e0e0;
+    --gray-dark: #888888;
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
     --shadow-lg: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -110,54 +116,83 @@ strong {
 .px-4 { padding-left: 2rem; padding-right: 2rem; }
 .px-5 { padding-left: 2.5rem; padding-right: 2.5rem; }
 
-/* Modern Header with curved design */
+/* Modern sleek dark header design */
 header {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background: var(--black);
     color: var(--white);
-    padding: 4rem 0 6rem;
-    text-align: center;
+    padding: 3rem 0;
     position: relative;
     overflow: hidden;
-    box-shadow: var(--shadow-md);
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+}
+
+.header-content {
+    max-width: 650px;
+    text-align: left;
+    padding: 2rem 0;
+}
+
+.header-accent {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    background: var(--primary);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 30% 0);
+    z-index: 1;
+    opacity: 0.9;
+}
+
+.header-dots {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-image: radial-gradient(var(--gray-dark) 2px, transparent 2px);
+    background-size: 20px 20px;
+    top: 20px;
+    left: 50%;
+    z-index: 1;
+    opacity: 0.2;
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
     font-weight: 700;
     letter-spacing: 0.5px;
+    line-height: 1.2;
     animation: fadeInUp 0.8s ease-out;
+}
+
+header .highlight {
+    color: var(--primary);
 }
 
 header h2 {
     font-size: 1.4rem;
     font-weight: 400;
-    opacity: 0.95;
+    opacity: 0.9;
     max-width: 700px;
-    margin: 0 auto;
+    margin-top: 1.5rem;
     animation: fadeInUp 1s ease-out;
 }
 
-header::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    background-image: url('../assets/curve-bg.svg');
-    background-size: cover;
-    background-position: center top;
-}
-
-/* Improved Tab Navigation */
+/* Modern Dark Tab Navigation */
 .tabs-nav {
-    background-color: var(--white);
-    box-shadow: var(--shadow-sm);
+    background-color: var(--black);
     position: sticky;
     top: 0;
     z-index: 100;
     transition: var(--transition);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .scrolled {
@@ -180,7 +215,7 @@ header::after {
     background: none;
     border: none;
     font-weight: 500;
-    color: var(--text);
+    color: var(--gray-light);
     cursor: pointer;
     transition: var(--transition);
     font-size: 0.95rem;
@@ -188,8 +223,13 @@ header::after {
     white-space: nowrap;
 }
 
+.tab-button i {
+    margin-right: 8px;
+    font-size: 1rem;
+}
+
 .tab-button:hover {
-    color: var(--primary);
+    color: var(--white);
 }
 
 .tab-button.active {
@@ -204,12 +244,13 @@ header::after {
     left: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(to right, var(--primary), var(--secondary));
+    background: var(--primary);
 }
 
 /* Tab Content */
 .tab-content {
-    padding: 3rem 0;
+    padding: 4rem 0;
+    background-color: var(--gray-light);
 }
 
 .tab-pane {
@@ -226,14 +267,48 @@ header::after {
     background-color: var(--white);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-sm);
-    padding: 2rem;
-    margin-bottom: 2rem;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
     transition: var(--transition);
+    border-top: 4px solid var(--primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle at top right, rgba(255,87,34,0.1) 0%, transparent 70%);
 }
 
 .card:hover {
     box-shadow: var(--shadow-md);
     transform: translateY(-5px);
+}
+
+/* Card variations */
+.card-dark {
+    background-color: var(--black);
+    color: var(--white);
+    border-top: 4px solid var(--primary);
+}
+
+.card-dark h3, .card-dark h4 {
+    color: var(--white);
+}
+
+.card-primary {
+    background-color: var(--primary);
+    color: var(--white);
+    border-top: none;
+}
+
+.card-primary h3, .card-primary h4 {
+    color: var(--white);
 }
 
 /* Highlight Box */
@@ -387,16 +462,17 @@ header::after {
     }
 }
 
-/* Investment Section */
+/* Investment Section - Modern Corporate Style */
 .investment-highlight {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background: var(--black);
     color: var(--white);
-    padding: 2.5rem;
+    padding: 3rem;
     border-radius: var(--radius-md);
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
     box-shadow: var(--shadow-lg);
     position: relative;
     overflow: hidden;
+    border-left: 5px solid var(--primary);
 }
 
 .investment-highlight::before {
@@ -406,23 +482,69 @@ header::after {
     right: 0;
     width: 200px;
     height: 200px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
-    transform: translate(50%, -50%);
+    background: linear-gradient(135deg, var(--primary) 0%, transparent 70%);
+    opacity: 0.15;
+    transform: translate(30%, -30%);
+}
+
+.investment-highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, var(--secondary) 0%, transparent 70%);
+    opacity: 0.15;
+    transform: translate(-30%, 30%);
 }
 
 .investment-box {
-    background-color: rgba(255, 255, 255, 0.15);
-    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 2rem;
     border-radius: var(--radius-sm);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    border-left: 3px solid var(--primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.investment-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.investment-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    height: 3px;
+    width: 60px;
+    background: var(--primary);
 }
 
 .investment-amount {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
-    margin: 0.5rem 0;
+    margin: 1rem 0;
+    color: var(--primary);
+}
+
+.investment-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .investment-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* Service Items */
