@@ -694,6 +694,47 @@ footer p {
     transform: scale(1.05);
 }
 
+/* New Founder Container */
+.founder-container {
+    margin-bottom: 2rem;
+}
+
+.founder-info {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.founder-image {
+    width: 180px;
+    height: 180px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.founder-details {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    .founder-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .founder-details {
+        width: 100%;
+    }
+    
+    .founder-image {
+        margin-bottom: 1rem;
+    }
+}
+
 /* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
