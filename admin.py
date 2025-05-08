@@ -73,14 +73,13 @@ def admin_add_testimonial():
             flash('Por favor, preencha todos os campos obrigatórios.', 'danger')
         else:
             try:
-                new_testimonial = Testimonial(
-                    doctor_name=doctor_name,
-                    specialty=specialty,
-                    content=content,
-                    image_url=image_url,
-                    stars=int(stars) if stars else 5,
-                    is_featured=is_featured
-                )
+                new_testimonial = Testimonial()
+                new_testimonial.doctor_name = doctor_name
+                new_testimonial.specialty = specialty
+                new_testimonial.content = content
+                new_testimonial.image_url = image_url
+                new_testimonial.stars = int(stars) if stars else 5
+                new_testimonial.is_featured = is_featured
                 db.session.add(new_testimonial)
                 db.session.commit()
                 flash('Depoimento adicionado com sucesso!', 'success')
@@ -165,13 +164,12 @@ def admin_add_event():
                 # Parse date string to datetime object
                 event_date = datetime.strptime(event_date_str, '%Y-%m-%dT%H:%M')
                 
-                new_event = Event(
-                    title=title,
-                    description=description,
-                    event_date=event_date,
-                    registration_link=registration_link,
-                    is_active=is_active
-                )
+                new_event = Event()
+                new_event.title = title
+                new_event.description = description
+                new_event.event_date = event_date
+                new_event.registration_link = registration_link
+                new_event.is_active = is_active
                 db.session.add(new_event)
                 db.session.commit()
                 flash('Evento adicionado com sucesso!', 'success')
@@ -260,10 +258,9 @@ def admin_add_subscriber():
                 flash('Este email já está cadastrado na newsletter.', 'warning')
             else:
                 try:
-                    new_subscriber = Newsletter(
-                        email=email,
-                        name=name
-                    )
+                    new_subscriber = Newsletter()
+                    new_subscriber.email = email
+                    new_subscriber.name = name
                     db.session.add(new_subscriber)
                     db.session.commit()
                     flash('Assinante adicionado com sucesso!', 'success')

@@ -65,13 +65,12 @@ def submit_contact():
         logging.info(f"Contact form submission: {name} ({email})")
         
         # Create new contact record in database
-        new_contact = models.Contact(
-            name=name,
-            email=email,
-            phone=phone,
-            specialty=specialty,
-            message=message
-        )
+        new_contact = models.Contact()
+        new_contact.name = name
+        new_contact.email = email
+        new_contact.phone = phone
+        new_contact.specialty = specialty
+        new_contact.message = message
         db.session.add(new_contact)
         db.session.commit()
         
