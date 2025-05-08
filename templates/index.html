@@ -18,7 +18,6 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/dark-theme.css') }}">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50,10 A40,40 0 1 0 50,90 A40,40 0 1 0 50,10 Z' fill='%23ff5722'/%3E%3Cpath d='M35,35 L65,35 L65,65 L35,65 Z' fill='white'/%3E%3Cpath d='M45,25 L55,25 L55,75 L45,75 Z' fill='white'/%3E%3C/svg%3E">
@@ -456,45 +455,26 @@
                     </p>
                     
                     <div class="investment-highlight mb-5">
-                        <h3 class="investment-title">Modelo de Parceria Neo Doctor</h3>
+                        <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 1.5rem;">Modelo de Parceria Neo Doctor</h3>
                         
-                        <div class="investment-grid">
-                            <div>
-                                <div class="investment-box mb-4">
-                                    <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem;">Investimento Inicial</h4>
-                                    <p class="investment-amount">R$ 50.000,00</p>
-                                    <p style="margin-bottom: 0; opacity: 0.9;">Parcelamento em até 10x</p>
-                                </div>
-                                
-                                <div class="investment-box">
-                                    <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 1rem;">Participação nas Vendas</h4>
-                                    <p class="investment-amount">30%</p>
-                                    <p style="margin-bottom: 0; opacity: 0.9;">Das vendas líquidas do produto</p>
-                                </div>
+                        <div class="grid grid-2">
+                            <div class="investment-box">
+                                <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Investimento Inicial</h4>
+                                <p class="investment-amount">R$ 50.000,00</p>
+                                <p style="margin-bottom: 0; opacity: 0.9;">Parcelamento em até 10x</p>
                             </div>
                             
-                            <div>
-                                <div style="background-color: rgba(0, 0, 0, 0.3); padding: 2rem; border-radius: 8px; height: 100%; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; border-left: 3px solid var(--primary);">
-                                    <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: radial-gradient(circle, rgba(255,87,34,0.2) 0%, transparent 70%);"></div>
-                                    
-                                    <h4 style="font-size: 1.2rem; color: var(--white); margin-bottom: 1.5rem; position: relative; display: inline-block;">
-                                        Projeção de Retorno
-                                        <span style="position: absolute; bottom: -8px; left: 0; width: 40px; height: 2px; background-color: var(--primary);"></span>
-                                    </h4>
-                                    
-                                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
-                                        <div style="width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--secondary)); display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
-                                            <i class="fas fa-chart-line" style="color: white; font-size: 1.5rem;"></i>
-                                        </div>
-                                        <div>
-                                            <p style="font-weight: 700; font-size: 1.4rem; margin-bottom: 0.2rem; color: var(--white);">5x a 10x</p>
-                                            <p style="margin-bottom: 0; opacity: 0.9;">o investimento no primeiro ano</p>
-                                        </div>
-                                    </div>
-                                    
-                                    <p style="margin-top: 1rem; font-style: italic; opacity: 0.8;">Baseado no histórico de performance de nossos parceiros</p>
-                                </div>
+                            <div class="investment-box">
+                                <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem;">Participação nas Vendas</h4>
+                                <p class="investment-amount">30%</p>
+                                <p style="margin-bottom: 0; opacity: 0.9;">Das vendas líquidas do produto</p>
                             </div>
+                        </div>
+                        
+                        <div class="mt-4" style="background-color: rgba(255, 255, 255, 0.1); padding: 1rem; border-radius: 8px;">
+                            <p style="margin-bottom: 0; font-weight: 500; font-size: 1.1rem; text-align: center;">
+                                Projeção média de retorno: 5x a 10x o investimento no primeiro ano
+                            </p>
                         </div>
                     </div>
                     
@@ -520,10 +500,9 @@
                         </div>
                     </div>
                     
-                    <div class="card-dark p-4 mb-4">
-                        <h4 style="color: var(--primary); font-weight: 700; margin-bottom: 1rem; font-size: 1.1rem;">Garantias de Resultados</h4>
-                        <div class="mb-3" style="height: 3px; width: 40px; background: linear-gradient(to right, var(--primary), var(--secondary));"></div>
-                        <ul class="list mb-0" style="color: var(--white);">
+                    <div class="highlight-box mb-4">
+                        <h4 class="mb-2" style="font-size: 1.1rem;">Garantias:</h4>
+                        <ul class="list mb-0">
                             <li>Se não atingirmos pelo menos R$ 100.000,00 em vendas no primeiro lançamento, devolvemos 50% do investimento inicial</li>
                             <li>Contrato transparente com todas as cláusulas de resultados e responsabilidades</li>
                             <li>Acompanhamento mensal de resultados com relatórios detalhados</li>
