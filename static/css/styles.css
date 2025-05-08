@@ -579,7 +579,7 @@ header h2 {
 /* Contract Section */
 .contract-section {
     margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .contract-title {
@@ -592,6 +592,65 @@ header h2 {
 .contract-duration {
     font-size: 1rem;
     margin-bottom: 0;
+}
+
+/* Next Steps Section */
+.next-steps-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #fffaf0;
+    border-radius: var(--radius-sm);
+}
+
+.next-steps-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.next-steps-description {
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .contact-info-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.contact-info-item {
+    padding: 0.5rem 1rem;
+}
+
+.contact-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #f77448;
+    margin-bottom: 0.3rem;
+}
+
+.contact-value {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+.proposal-validity {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 1rem;
+    text-align: center;
+    font-style: italic;
 }
 
 /* Case Studies - New Format */
