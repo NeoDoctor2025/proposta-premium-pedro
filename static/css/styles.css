@@ -139,6 +139,16 @@ header {
     padding: 2rem 0;
 }
 
+.logo-container {
+    display: flex;
+    justify-content: center;
+}
+
+.header-logo {
+    max-width: 280px;
+    height: auto;
+}
+
 .header-accent {
     position: absolute;
     top: 0;
