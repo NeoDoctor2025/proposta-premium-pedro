@@ -1,0 +1,74 @@
+Desenvolver uma interface hiper premium para exibir a metodologia em 5 etapas de um programa de transformação de expertise médica em produtos digitais lucrativos. A interface deve transmitir sofisticação, confiança e exclusividade.
+
+Plataforma: Web
+Ambiente: Online
+Hospedagem: Indefinida (compatível com Replit para prototipagem)
+Interface: Interativa, responsiva, visualmente elegante
+
+✅ Componentes obrigatórios:
+Cabeçalho da seção
+
+Título: “Nossa Metodologia”
+
+Subtítulo: “Transformamos a expertise de cirurgiões plásticos em negócios digitais lucrativos e escaláveis.”
+
+Navegação por etapas (wizard-style horizontal)
+
+Etapas:
+
+Discovery
+
+Estratégia
+
+Produção
+
+Lançamento
+
+Escala
+
+Cada aba deve ter um ícone animado (ou sugestão de animação)
+
+Destaque elegante na aba ativa (fundo dourado suave, sombra sutil)
+
+Conteúdo da etapa “1. Discovery” (exibido inicialmente):
+
+Diagnóstico completo da expertise, posicionamento e mercado
+
+Bloco de conteúdo com:
+
+✔️ Análise de diferenciais competitivos
+
+✔️ Mapeamento de público-alvo e demandas
+
+✔️ Identificação de oportunidades de monetização
+
+✔️ Pesquisa com clientes e potenciais alunos
+
+✔️ Avaliação da concorrência e do posicionamento atual
+
+Final da etapa: destaque com chamada:
+“Ao final, você terá uma visão clara do seu potencial de mercado digital e caminhos para monetizar sua expertise.”
+
+🎨 Estilo visual:
+Tipografia refinada: use fontes como Playfair Display (títulos) + Inter ou Lato (corpo)
+
+Paleta: branco perolado, dourado elegante, cinza grafite, detalhes em cobre
+
+Animações suaves: entrada de elementos, transição entre abas
+
+Layout responsivo: abas horizontais no desktop, carrossel ou acordeão no mobile
+
+Ilustração vetorial leve ao lado do conteúdo (tema: diagnóstico de mercado)
+
+📌 Extras (se possível incluir):
+Modo escuro com elegância
+
+Mini barra de progresso ou mapa lateral
+
+Botão “Falar com consultor” ou “Ver estudo de caso”
+
+Compatível com frameworks modernos (React + Tailwind ou Next.js)
+
+Linguagem da aplicação: Português
+Linguagem de interação com a IA: Português
+

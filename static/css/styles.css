@@ -362,14 +362,59 @@ header h2 {
     top: 2px;
 }
 
+/* Methodology Section */
+.methodology-section {
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    padding: 3rem 0;
+    border-radius: 16px;
+}
+
+.methodology-section::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-image: url('../assets/grid-pattern.svg');
+    opacity: 0.03;
+    z-index: 0;
+}
+
+.methodology-section .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, var(--primary), #FFAB00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.methodology-section .subtitle {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #5A5A5A;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+}
+
 /* Methodology Tabs */
 .methodology-tabs {
     display: flex;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 1.8rem;
+    margin-bottom: 2.5rem;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
 .methodology-tabs::-webkit-scrollbar {
@@ -377,25 +422,84 @@ header h2 {
 }
 
 .methodology-tab {
-    padding: 0.9rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.2rem 1.5rem;
     background: none;
     border: none;
     font-weight: 500;
-    color: var(--text);
+    color: #4A4A4A;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.3s ease;
     white-space: nowrap;
+    position: relative;
+    border-radius: 10px;
+    margin: 0 0.5rem;
+    min-width: 100px;
+}
+
+.methodology-tab:hover {
+    transform: translateY(-3px);
+}
+
+.methodology-tab .tab-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 0.8rem;
+    transition: all 0.3s ease;
 }
 
 .methodology-tab.active {
-    color: var(--primary);
-    border-bottom: 2px solid var(--primary);
+    color: #333;
     font-weight: 600;
+    background: linear-gradient(135deg, rgba(255, 236, 210, 0.9), rgba(252, 224, 187, 0.7));
+    box-shadow: 0 6px 16px rgba(255, 87, 34, 0.15);
+}
+
+.methodology-tab.active .tab-icon {
+    transform: scale(1.1);
+}
+
+.methodology-tab .tab-number {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #999;
+    margin-bottom: 0.3rem;
+}
+
+.methodology-tab.active .tab-number {
+    color: var(--primary);
 }
 
 .methodology-content {
     display: none;
     animation: fadeIn 0.5s;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.03);
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .methodology-tabs {
+        justify-content: flex-start;
+        padding-bottom: 1rem;
+    }
+    
+    .methodology-tab {
+        min-width: 80px;
+        padding: 1rem;
+    }
+    
+    .methodology-section .section-title {
+        font-size: 2rem;
+    }
 }
 
 .methodology-content.active {
