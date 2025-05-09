@@ -59,9 +59,6 @@
                 <button class="tab-button" data-tab="faq">
                     <i class="fas fa-question-circle"></i> FAQ
                 </button>
-                <button class="tab-button" data-tab="contact">
-                    <i class="fas fa-envelope"></i> Contato
-                </button>
             </div>
         </div>
     </div>
@@ -725,85 +722,6 @@
                                 <li>Painel em tempo real dos investimentos em tráfego pago;</li>
                                 <li>Análise de resultados ao final, com relatório completo e plano de ação.</li>
                             </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Contact Tab -->
-            <div id="contact" class="tab-pane">
-                <div class="card">
-                    <h2 class="section-title">ENTRE EM CONTATO</h2>
-                    <p class="mb-4">
-                        Estamos prontos para transformar sua expertise médica em um negócio digital lucrativo. Preencha o formulário abaixo para agendar uma reunião estratégica:
-                    </p>
-                    
-                    {% with messages = get_flashed_messages(with_categories=true) %}
-                        {% if messages %}
-                            {% for category, message in messages %}
-                                <div class="alert alert-{{ category }}">
-                                    {{ message }}
-                                </div>
-                            {% endfor %}
-                        {% endif %}
-                    {% endwith %}
-                    
-                    <form id="contactForm" class="contact-form" method="post" action="{{ url_for('submit_contact') }}">
-                        <div class="grid grid-2">
-                            <div class="form-group">
-                                <label for="name" class="form-label">Nome completo *</label>
-                                <input type="text" id="name" name="name" class="form-control" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email" class="form-label">E-mail *</label>
-                                <input type="email" id="email" name="email" class="form-control" required>
-                            </div>
-                        </div>
-                        
-                        <div class="grid grid-2">
-                            <div class="form-group">
-                                <label for="phone" class="form-label">Telefone/WhatsApp *</label>
-                                <input type="tel" id="phone" name="phone" class="form-control" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="specialty" class="form-label">Especialidade</label>
-                                <input type="text" id="specialty" name="specialty" class="form-control">
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="message" class="form-label">Mensagem *</label>
-                            <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
-                        </div>
-                        
-                        <div class="form-group text-center mt-4">
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-paper-plane"></i> Enviar Mensagem
-                            </button>
-                        </div>
-                    </form>
-                    
-                    <div class="grid grid-2 mt-5">
-                        <div>
-                            <h4 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem;">
-                                <i class="fas fa-map-marker-alt" style="color: var(--primary);"></i> Onde Estamos
-                            </h4>
-                            <p>
-                                Av. Paulista, 1000, São Paulo - SP<br>
-                                Brasil
-                            </p>
-                        </div>
-                        
-                        <div>
-                            <h4 style="font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem;">
-                                <i class="fas fa-envelope" style="color: var(--primary);"></i> Contato Direto
-                            </h4>
-                            <p>
-                                Email: contato@ultimatecamp.com.br<br>
-                                Telefone: +55 (11) 3000-0000
-                            </p>
                         </div>
                     </div>
                 </div>
