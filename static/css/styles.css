@@ -1022,11 +1022,12 @@ footer p {
 .founder-image {
     width: 180px;
     height: 180px;
-    border-radius: var(--radius-md);
+    border-radius: 50%;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     object-fit: cover;
     flex-shrink: 0;
+    background-color: #000;
 }
 
 .founder-details {
