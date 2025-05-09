@@ -134,19 +134,23 @@ header {
 }
 
 .header-content {
-    max-width: 650px;
+    max-width: 750px;
     text-align: left;
     padding: 2rem 0;
 }
 
-.logo-container {
-    display: flex;
-    justify-content: center;
+.header-content h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
 }
 
-.header-logo {
-    max-width: 280px;
-    height: auto;
+.header-content h2 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.4;
+    max-width: 650px;
 }
 
 .header-accent {
@@ -174,7 +178,7 @@ header {
 }
 
 header h1 {
-    font-size: 3rem;
+    font-size: 3.2rem;
     margin-bottom: 1rem;
     font-weight: 700;
     letter-spacing: 0.5px;
@@ -191,7 +195,8 @@ header h2 {
     font-weight: 400;
     opacity: 0.9;
     max-width: 700px;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
+    line-height: 1.5;
     animation: fadeInUp 1s ease-out;
 }
 
