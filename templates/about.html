@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block title %}Quem Somos | PROPOSTA COMERCIAL COMPLETA{% endblock %}
+
+{% block content %}
+<div class="tab-content">
+  <section id="about" class="tab-pane active">
+    <section class="card">
+      <h2 class="section-title">QUEM SOMOS</h2>
+      <p class="mb-3">
+        Somos uma
+        <strong
+          >agência de lançamentos digitais focada em criar, validar e escalar
+          cursos de cirurgia plástica que geram autoridade e resultados
+          reais,</strong
+        >, com presença global e experiência comprovada:
+      </p>
+      <ul class="list">
+        <li>Atuação em mais de 49 países com serviços em múltiplos idiomas</li>
+        <li>Criadores do maior case de sucesso mundial em Rinoplastia</li>
+        <li>
+          Desde 2020, focados exclusivamente na construção de negócios digitais
+          para cirurgiões plásticos renomados
+        </li>
+      </ul>
+
+      <section class="opportunity-section">
+        <h3 class="section-title mb-3">OPORTUNIDADE, DR. JOÃO</h3>
+        <p class="opportunity-subtitle">
+          Por que agora é o momento certo para sua expansão internacional?
+        </p>
+
+        <div class="opportunity-boxes">
+          <!-- Box 1: Validação Comprovada -->
+          <div class="opportunity-card card-validation">
+            <div class="opportunity-card-number">01</div>
+            <h4 class="opportunity-card-title">Validação Comprovada</h4>
+            <ul class="opportunity-card-list">
+              <li>Faturamento de R$ 5M+ no Brasil</li>
+              <li>Produto testado e aprovado</li>
+              <li>Audiência engajada e resultados reais</li>
+            </ul>
+          </div>
+
+          <!-- Box 2: Gap de Mercado -->
+          <div class="opportunity-card card-market">
+            <div class="opportunity-card-number">02</div>
+            <h4 class="opportunity-card-title">Gap de Mercado</h4>
+            <ul class="opportunity-card-list">
+              <li>Mercados internacionais famintos por soluções premium</li>
+              <li>Concorrência ainda não estruturada digitalmente</li>
+              <li>Janela de oportunidade limitada</li>
+            </ul>
+          </div>
+
+          <!-- Box 3: Expertise Comprovada -->
+          <div class="opportunity-card card-expertise">
+            <div class="opportunity-card-number">03</div>
+            <h4 class="opportunity-card-title">Expertise Comprovada</h4>
+            <ul class="opportunity-card-list">
+              <li>Experiência em múltiplos países</li>
+              <li>Metodologia validada em 3 continentes</li>
+              <li>Inteligência de mercado já mapeada</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <h3 class="section-title mb-4">QUEM ESTÁ POR TRÁS?</h3>
+      <div class="founder-container mb-4">
+        <div class="founder-info">
+          <img
+            src="{{ url_for('static', filename='assets/humberto.png') }}"
+            alt="Humberto Lopes"
+            class="founder-image"
+          />
+          <div class="founder-details">
+            <h4 class="mb-2">Humberto Lopes</h4>
+            <p class="mb-2">
+              Profissional com mais de 15 anos de experiência em marketing
+              digital e 11 anos de atuação em lançamentos de produtos online,
+              com foco no segmento de cirurgia plástica desde 2020.
+            </p>
+            <p class="mb-2"><strong>Trajetória Profissional:</strong></p>
+            <ul class="list">
+              <li>Estrategista Digital de cirurgiões plásticos renomados.</li>
+              <li>
+                Criador do Ultimate Camp, bootcamp presencial e online
+                especializado em lançamentos digitais e criador do método 3 em 1
+                para lançamentos de cirurgiões plásticos, estratégias de
+                anúncios no Facebook para alcançar o público-alvo do nicho de
+                atuação, os formatos de anúncios com maior taxa de conversão de
+                leads em alunos— e muito além disso.,
+              </li>
+              <li>
+                Participante e contribuinte de grupos de alta performance, com
+                acesso antecipado às principais tendências de mercado e aos
+                maiores players do marketing digital brasileiro.
+              </li>
+              <li>
+                Visão de Futuro: Consolidar o Ultimate Camp como a principal
+                referência em lançamentos digitais e contribuir para o
+                crescimento dos maiores experts da cirurgia plástica por meio de
+                nossa metodologia
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>
+{% endblock %}

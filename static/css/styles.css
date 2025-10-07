@@ -339,6 +339,195 @@ header h2 {
     margin-bottom: 0;
 }
 
+/* Orange Gradient Opportunity Box */
+.opportunity-box {
+    background: linear-gradient(135deg, #ff5722, #ff8a50);
+    color: white;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+}
+
+.opportunity-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.opportunity-box h4 {
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.opportunity-box p {
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.opportunity-box .opportunity-subtitle {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 1.5rem 0 1rem 0;
+}
+
+.opportunity-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.opportunity-list li {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.opportunity-list li strong {
+    color: white;
+    font-weight: 600;
+}
+
+/* Three Boxes Opportunity Section */
+.opportunity-section {
+    margin: 3rem 0;
+}
+
+.opportunity-subtitle {
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--text);
+    margin-bottom: 3rem;
+    font-weight: 500;
+}
+
+.opportunity-boxes {
+    display: flex;
+    gap: 2rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.opportunity-card {
+    flex: 1;
+    min-width: 300px;
+    padding: 2.5rem 2rem;
+    border-radius: var(--radius-lg);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+}
+
+.opportunity-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.opportunity-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.opportunity-card.card-validation {
+    background: linear-gradient(135deg, #ff5722, #ff8a50);
+}
+
+.opportunity-card.card-market {
+    background: linear-gradient(135deg, #2196f3, #64b5f6);
+}
+
+.opportunity-card.card-expertise {
+    background: linear-gradient(135deg, #4caf50, #81c784);
+}
+
+.opportunity-card-number {
+    font-size: 3rem;
+    font-weight: 700;
+    opacity: 0.3;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    line-height: 1;
+}
+
+.opportunity-card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+.opportunity-card-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.opportunity-card-list li {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.opportunity-card-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: bold;
+    color: rgba(255,255,255,0.9);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .opportunity-boxes {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .opportunity-card {
+        min-width: auto;
+    }
+    
+    .opportunity-card-number {
+        font-size: 2.5rem;
+        top: 0.5rem;
+        right: 1rem;
+    }
+}
+
 /* List Styles */
 .list {
     list-style-type: none;
@@ -1001,6 +1190,59 @@ header h2 {
     .investment-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+}
+
+/* Investment Section (Requested) */
+.investment-section {
+    background: #fff;
+    color: #333;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.investment-section h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.investment-card {
+    background: #ffffff;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.investment-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.investment-card h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.payment-terms p {
+    margin: 0.25rem 0;
+    color: #444;
 }
 
 /* Service Items */

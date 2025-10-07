@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function initTabs() {
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabPanes = document.querySelectorAll('.tab-pane');
+    const serverInitialTab = document.body.getAttribute('data-initial-tab');
     
     tabButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -64,6 +65,18 @@ function initTabs() {
         
         if (tabButton) {
             tabButton.click();
+        }
+    }
+
+    // If server provided an initial tab, activate it
+    if (serverInitialTab) {
+        const tabButton = document.querySelector(`.tab-button[data-tab="${serverInitialTab}"]`);
+        const tabPane = document.getElementById(serverInitialTab);
+        if (tabButton && tabPane) {
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabPanes.forEach(pane => pane.classList.remove('active'));
+            tabButton.classList.add('active');
+            tabPane.classList.add('active');
         }
     }
 }

@@ -1,0 +1,628 @@
+{% extends 'base.html' %}
+
+{% block title %}Modelo de Negócio e Investimento - Dr. João Maximiliano | Ultimate Camp{% endblock %}
+
+{% block extra_head %}
+  {{ super() }}
+  <style>
+    .investment-page {
+      background: #f5f5f5;
+      padding: 0 0 60px;
+      color: #333;
+    }
+
+    .investment-page .investment-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .investment-page .investment-panel {
+      background: #fff;
+      border-radius: 20px;
+      padding: 50px;
+      margin-bottom: 40px;
+      border-top: 4px solid #ff6b35;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .investment-page h1 {
+      color: #ff6b35;
+      font-size: 42px;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      border-bottom: 3px solid #ff6b35;
+      padding-bottom: 15px;
+      display: inline-block;
+    }
+
+    .investment-page h2 {
+      color: #ff6b35;
+      font-size: 32px;
+      margin: 40px 0 20px;
+    }
+
+    .investment-page h3 {
+      color: #333;
+      font-size: 24px;
+      margin: 30px 0 15px;
+    }
+
+    .investment-page .intro-text {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .investment-page .investment-highlight {
+      background: linear-gradient(135deg, #ff6b35 0%, #e63946 100%);
+      border-radius: 15px;
+      padding: 40px;
+      color: #FFFFFF;
+      margin: 30px 0;
+    }
+
+    .investment-page .investment-highlight h3 {
+      color: #FFFFFF;
+      margin-top: 0;
+    }
+
+    .investment-page .investment-highlight p {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #FFFFFF;
+    }
+
+    .investment-page .investment-highlight * {
+      color: #FFFFFF !important;
+    }
+
+    .investment-page .investment-highlight strong {
+      color: #FFFFFF !important;
+    }
+
+    .investment-page .investment-highlight li {
+      color: #FFFFFF !important;
+    }
+
+    .investment-page .investment-highlight ul {
+      color: #FFFFFF !important;
+    }
+
+    .investment-page .investment-checklist {
+      list-style: none;
+      margin: 20px 0;
+      padding: 0;
+    }
+
+    .investment-page .investment-checklist li {
+      padding: 12px 0 12px 40px;
+      position: relative;
+      font-size: 16px;
+    }
+
+    .investment-page .investment-checklist li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      font-size: 20px;
+    }
+
+    .investment-page .investment-initial {
+      background: linear-gradient(135deg, #ff6b35 0%, #e63946 100%);
+      border-radius: 20px;
+      padding: 50px;
+      color: #fff;
+      margin: 40px 0;
+    }
+
+    .investment-page .investment-initial h2 {
+      color: #fff;
+      margin-top: 0;
+    }
+
+    .investment-page .investment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .investment-page .investment-card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 15px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .investment-page .investment-card h4 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      opacity: 0.9;
+    }
+
+    .investment-page .investment-card .price {
+      font-size: 42px;
+      font-weight: 700;
+      margin: 15px 0;
+    }
+
+    .investment-page .investment-card .description {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    .investment-page .payment-terms {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      font-size: 14px;
+    }
+
+    /* Garantir que todo texto nos cards de investimento seja branco */
+    .investment-page .investment-card * {
+      color: #FFFFFF !important;
+    }
+
+    .investment-page .investment-card h4 {
+      color: #FFFFFF !important;
+    }
+
+    .investment-page .investment-card .price {
+      color: #FFFFFF !important;
+    }
+
+    .investment-page .investment-card .description {
+      color: #FFFFFF !important;
+    }
+
+    .investment-page .investment-card .payment-terms {
+      color: #FFFFFF !important;
+    }
+
+    .investment-page .investment-card .payment-terms p {
+      color: #FFFFFF !important;
+    }
+
+    .investment-page .investment-card .payment-terms strong {
+      color: #FFFFFF !important;
+    }
+
+    .investment-page .investment-table {
+      width: 100%;
+      margin: 30px 0;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .investment-page .investment-table th {
+      background: linear-gradient(135deg, #ff6b35 0%, #e63946 100%);
+      color: #fff;
+      padding: 20px;
+      text-align: left;
+      font-size: 16px;
+    }
+
+    .investment-page .investment-table td {
+      padding: 20px;
+      border-bottom: 1px solid #eee;
+      font-size: 15px;
+    }
+
+    .investment-page .investment-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .investment-page .investment-table tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+
+    .investment-page .investment-example {
+      background: #fff5e6;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 30px 0;
+      border-left: 5px solid #ff6b35;
+    }
+
+    .investment-page .investment-example h4 {
+      color: #ff6b35;
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    .investment-page .investment-example .example-calculation {
+      font-size: 16px;
+      line-height: 2;
+    }
+
+    .investment-page .investment-example .example-calculation strong {
+      color: #ff6b35;
+    }
+
+    .investment-page .investment-services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 30px;
+      margin: 30px 0;
+    }
+
+    .investment-page .investment-service-item {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      background: #f9f9f9;
+      border-radius: 10px;
+    }
+
+    .investment-page .investment-service-number {
+      background: linear-gradient(135deg, #ff6b35 0%, #e63946 100%);
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .investment-page .investment-service-content h4 {
+      color: #333;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .investment-page .investment-service-content p {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .investment-page .investment-timeline {
+      background: #f9f9f9;
+      padding: 30px;
+      border-radius: 15px;
+      margin: 30px 0;
+    }
+
+    .investment-page .investment-timeline h4 {
+      color: #ff6b35;
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    .investment-page .investment-timeline-item {
+      padding: 15px 0;
+      border-left: 3px solid #ff6b35;
+      padding-left: 20px;
+      margin-left: 10px;
+    }
+
+    .investment-page .investment-timeline-item strong {
+      color: #ff6b35;
+    }
+
+    .investment-page .investment-contact-card {
+      background: #fff5e6;
+      border-left: 5px solid #ff6b35;
+      padding: 30px;
+      margin: 30px 0;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .investment-page .investment-contact-card h4 {
+      color: #ff6b35;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    .investment-page .investment-contact-card p {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    .investment-page .investment-contact-card em {
+      color: #666;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .investment-page .investment-panel {
+        padding: 30px 20px;
+      }
+
+      .investment-page h1 {
+        font-size: 32px;
+      }
+
+      .investment-page h2 {
+        font-size: 26px;
+      }
+
+      .investment-page .investment-services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .investment-page .investment-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media print {
+      .investment-page .investment-panel {
+        page-break-inside: avoid;
+      }
+    }
+
+    /* Garantir que nenhum header antigo seja exibido */
+    .investment-page .header,
+    .investment-page div[class*="header"],
+    .investment-page .old-header {
+      display: none !important;
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+<!-- Atualização: Header antigo removido - apenas header do base.html deve ser exibido -->
+<div class="tab-content">
+  <section id="investment" class="tab-pane active">
+    <div class="investment-page">
+        <div class="investment-container">
+          <div class="investment-panel">
+        <h1>Modelo de Negócio e Investimento</h1>
+
+        <section class="investment-initial">
+          <h2>Investimento Inicial</h2>
+
+          <div class="investment-grid">
+            <div class="investment-card">
+              <h4>Setup Completo:</h4>
+              <div class="price">R$ 120.000,00</div>
+              <div class="description">
+                Inteligência de negócios internacional, estrutura, processos,
+                capacitação e transferência de know-how
+              </div>
+
+              <div class="payment-terms">
+                <p><strong>Forma de pagamento:</strong></p>
+                <p>• Entrada: R$ 40.000</p>
+                <p>• 30 dias: R$ 40.000</p>
+                <p>• 60 dias: R$ 40.000</p>
+              </div>
+            </div>
+
+            <div class="investment-card">
+              <h4>Investimento em Tráfego Pago:</h4>
+              <div class="price">R$ 50.000,00</div>
+              <div class="description">
+                Gestão conjunta - Campanhas multilíngues em 3 mercados
+                simultâneos
+              </div>
+              <div class="payment-terms">
+                <p>Início após setup completo</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <h2>Remuneração Variável Progressiva</h2>
+
+        <p class="intro-text">
+          <strong
+            >Modelo de parceria baseado em resultados que protege completamente
+            seu investimento inicial.</strong
+          >
+        </p>
+
+        <div class="investment-highlight">
+          <h3>Como funciona:</h3>
+          <p>
+            Além do investimento fixo de R$ 170 mil (setup + tráfego),
+            estruturamos uma parceria de performance para alinhar nossos
+            interesses ao seu sucesso exponencial.
+          </p>
+          <p style="margin-top: 15px; font-size: 18px">
+            A remuneração variável é calculada sobre o
+            <strong>faturamento bruto do lançamento</strong> e só começa após você
+            recuperar 100% do investimento inicial.
+          </p>
+        </div>
+
+        <h3>Tabela de Gatilhos Progressivos</h3>
+
+        <table class="investment-table">
+          <thead>
+            <tr>
+              <th>Faixa de Faturamento</th>
+              <th>% Remuneração Variável</th>
+              <th>Benefício</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>R$ 0 a R$ 170 mil</strong></td>
+              <td>
+                <strong style="color: #ff6b35; font-size: 20px">0%</strong>
+              </td>
+              <td><i data-lucide="check-circle"></i> Você recupera 100% do investimento</td>
+            </tr>
+            <tr>
+              <td><strong>R$ 170 mil a R$ 500 mil</strong></td>
+              <td>
+                <strong style="color: #ff6b35; font-size: 20px">5%</strong>
+                sobre o excedente
+              </td>
+              <td>Fase de expansão controlada</td>
+            </tr>
+            <tr>
+              <td><strong>R$ 500 mil a R$ 1 milhão</strong></td>
+              <td>
+                <strong style="color: #ff6b35; font-size: 20px">8%</strong>
+                sobre o excedente
+              </td>
+              <td>Aceleração de crescimento</td>
+            </tr>
+            <tr>
+              <td><strong>Acima de R$ 1 milhão</strong></td>
+              <td>
+                <strong style="color: #ff6b35; font-size: 20px">10%</strong>
+                sobre o excedente
+              </td>
+              <td>Escala internacional consolidada</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="investment-example">
+          <h4><i data-lucide="bar-chart-3"></i> Exemplo Prático</h4>
+          <p style="font-size: 18px; margin-bottom: 20px">
+            <strong
+              >Cenário: Faturamento de R$ 800 mil no lançamento internacional</strong
+            >
+          </p>
+
+          <div class="example-calculation">
+            <p><strong>Cálculo da remuneração variável:</strong></p>
+            <p>• R$ 0 a R$ 170k = <strong>R$ 0</strong> (você recupera o investimento)</p>
+            <p>• R$ 170k a R$ 500k = <strong>R$ 16.500</strong> (5% de R$ 330k)</p>
+            <p>• R$ 500k a R$ 800k = <strong>R$ 24.000</strong> (8% de R$ 300k)</p>
+            <p style="margin-top: 20px; padding-top: 20px; border-top: 2px solid #ff6b35">
+              <strong style="font-size: 20px">Remuneração variável total: R$ 40.500</strong>
+            </p>
+            <p style="font-size: 22px; color: #ff6b35; margin-top: 10px">
+              <strong>Seu lucro líquido: R$ 629.500</strong>
+              <span style="font-size: 14px; color: #666"
+                >(faturamento - investimento - variável)</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <div class="investment-highlight">
+          <h3><i data-lucide="target"></i> Por que este modelo é justo:</h3>
+          <ul class="investment-checklist">
+            <li>
+              <strong>Proteção total:</strong> Você só paga variável após recuperar
+              100% do investimento
+            </li>
+            <li>
+              <strong>Alinhamento de interesses:</strong> Quanto mais você fatura,
+              mais todos ganham
+            </li>
+            <li>
+              <strong>Risco compartilhado:</strong> Nosso sucesso depende do seu
+              sucesso
+            </li>
+            <li>
+              <strong>Transparência:</strong> Faturamento bruto é simples de
+              calcular e auditar
+            </li>
+          </ul>
+        </div>
+
+        <h2>Serviços Incluídos no Investimento</h2>
+
+        <div class="investment-services-grid">
+          {% for number, title, description in [
+            ('1', 'Tráfego Pago Internacional', 'Meta Ads, Google Ads para atrair leads qualificados em 3 idiomas (Português, Inglês, Espanhol) e múltiplos mercados simultâneos'),
+            ('2', 'Copywriting Estratégico Multilíngue', 'VSL, e-mails, scripts e criativos com foco em conversão, adaptados culturalmente para cada região-alvo'),
+            ('3', 'Design Profissional Global', 'Identidade visual completa, landing pages e materiais adaptados para cada mercado com sensibilidade cultural'),
+            ('4', 'Tecnologia e Integrações Internacionais', 'Setup de plataformas, automações, CRM e gateways de pagamento globais (Stripe, PayPal, processadores locais)'),
+            ('5', 'Edição de Vídeo Profissional', 'Conteúdo principal, depoimentos, legendas e materiais para campanhas em múltiplos idiomas'),
+            ('6', 'Gestão de Lançamento Internacional', 'Cronograma detalhado, coordenação de times multilíngues e execução de todas as etapas do projeto'),
+            ('7', 'Atendimento e Suporte Multilíngue', 'Equipe dedicada bilíngue para nutrir leads e maximizar conversões em tempo real durante o lançamento'),
+            ('8', 'Ferramentas e Contingência', 'MAKE, SendFLow, MAnyChat, N8N, tracking avançado, estrutura de tráfego redundante e backups operacionais'),
+            ('9', 'Análise de Performance em Tempo Real', 'Dashboards customizados, otimizações contínuas por mercado e relatório final consolidado'),
+            ('10', 'Transferência Completa de Know-how', 'Treinamento hands-on do seu time, todos os processos documentados, bases de leads entregues e estrutura 100% replicável')
+          ] %}
+            <div class="investment-service-item">
+              <div class="investment-service-number">{{ number }}</div>
+              <div class="investment-service-content">
+                <h4>{{ title }}</h4>
+                <p>{{ description }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="investment-highlight">
+          <h3><i data-lucide="rocket"></i> Diferenciais exclusivos desta proposta:</h3>
+          <ul class="investment-checklist">
+            <li>
+              <strong>Inteligência já validada:</strong> Bases de leads, públicos
+              lookalike e criativos testados em 3 continentes
+            </li>
+            <li>
+              <strong>Lançamento incluído:</strong> Acompanhamento completo do
+              primeiro lançamento internacional
+            </li>
+            <li>
+              <strong>Autonomia total:</strong> Após o projeto, você pode replicar
+              quantas vezes quiser sem depender de ninguém
+            </li>
+            <li>
+              <strong>Metodologia 3 em 1:</strong> Lançamento simultâneo em
+              Português, Inglês e Espanhol
+            </li>
+          </ul>
+        </div>
+
+        <h2>Contrato e Timeline</h2>
+
+        <div class="investment-timeline">
+          <h4>Duração do projeto: 3 meses</h4>
+
+          <div class="investment-timeline-item">
+            <p>
+              <strong>Mês 1:</strong> Setup completo, treinamento, preparação de
+              materiais e estruturação
+            </p>
+          </div>
+
+          <div class="investment-timeline-item">
+            <p>
+              <strong>Mês 2:</strong> Pré-lançamento, aquecimento de audiências e
+              testes
+            </p>
+          </div>
+
+          <div class="investment-timeline-item">
+            <p>
+              <strong>Mês 3:</strong> Lançamento ativo com acompanhamento hands-on
+              diário
+            </p>
+          </div>
+
+          <p
+            style="margin-top: 20px; padding: 20px; background: #fff; border-radius: 10px"
+          >
+            <strong style="color: #ff6b35">Primeiro lançamento incluído:</strong>
+            Dentro do período contratual com nossa participação direta
+          </p>
+        </div>
+
+        <div class="investment-contact-card">
+          <h4>Contatos Ultimate Camp</h4>
+          <p>
+            <strong>Email:</strong> contato@ultimatecamp.com.br<br />
+            <strong>Telefone:</strong> (31) 99194-8096<br />
+            <strong>Website:</strong> www.ultimatecamp.com.br
+          </p>
+          <p>
+            <em>Esta proposta é válida por 15 dias a partir da data de recebimento.</em>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

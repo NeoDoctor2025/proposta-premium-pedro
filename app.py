@@ -15,9 +15,43 @@ app.secret_key = os.environ.get("SESSION_SECRET", "neo-doctor-default-key")
 
 @app.route('/')
 def index():
-    # Pass the current year to the template for copyright notice
+    return about()
+
+# Page routes to organize content by sections
+@app.route('/sobre')
+def about():
     current_year = datetime.now().year
-    return render_template('index.html', current_year=current_year)
+    return render_template('about.html', current_year=current_year, active_page='about')
+
+@app.route('/cases')
+def cases():
+    current_year = datetime.now().year
+    return render_template('cases.html', current_year=current_year, active_page='cases')
+
+@app.route('/metodologia')
+def methodology():
+    current_year = datetime.now().year
+    return render_template('methodology.html', current_year=current_year, active_page='methodology')
+
+@app.route('/metodologia/codigo')
+def methodology_code():
+    current_year = datetime.now().year
+    return render_template('methodology.html', current_year=current_year, active_page='methodology')
+
+@app.route('/servicos')
+def services():
+    current_year = datetime.now().year
+    return render_template('services.html', current_year=current_year, active_page='services')
+
+@app.route('/investimento')
+def investment():
+    current_year = datetime.now().year
+    return render_template('investment.html', current_year=current_year, active_page='investment')
+
+@app.route('/faq')
+def faq():
+    current_year = datetime.now().year
+    return render_template('faq.html', current_year=current_year, active_page='faq')
 
 @app.route('/submit-contact', methods=['POST'])
 def submit_contact():
@@ -109,4 +143,8 @@ def send_email(recipient, subject, body):
         return False
 
 if __name__ == '__main__':
+    # For local development
     app.run(host='0.0.0.0', port=5000, debug=True)
+else:
+    # For production (Netlify)
+    app.config['DEBUG'] = False
