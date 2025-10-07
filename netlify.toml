@@ -1,16 +1,18 @@
 [build]
-  command = "npm run build"
+  command = "echo 'Build complete'"
   functions = "netlify/functions"
   publish = "."
 
 [build.environment]
   NODE_VERSION = "18"
-  PYTHON_VERSION = "3.9"
-
-
 
 [functions]
   directory = "netlify/functions"
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/app"
+  status = 200
 
 [[headers]]
   for = "/*"
