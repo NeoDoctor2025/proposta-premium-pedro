@@ -1,26 +1,48 @@
 import sys
 import os
+import json
 
 # Add the project root to the Python path
-project_root = os.path.join(os.path.dirname(__file__), '..', '..')
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
 sys.path.insert(0, project_root)
 
 # Set the working directory to project root
 os.chdir(project_root)
 
-from app import app
+try:
+    from app import app
+    from serverless_wsgi import handle_request
+except ImportError as e:
+    app = None
+    handle_request = None
+    import_error = str(e)
 
 def handler(event, context):
     """
     Netlify Functions handler for Flask app
     """
     try:
-        # Import the serverless WSGI handler
-        from serverless_wsgi import handle_request
+        if app is None or handle_request is None:
+            return {
+                'statusCode': 500,
+                'headers': {'Content-Type': 'application/json'},
+                'body': json.dumps({
+                    'error': 'Import failed',
+                    'details': import_error if 'import_error' in locals() else 'Unknown import error'
+                })
+            }
+        
+        # Handle the request with serverless WSGI
         return handle_request(app, event, context)
-    except ImportError:
-        # Fallback if serverless_wsgi is not available
+        
+    except Exception as e:
         return {
             'statusCode': 500,
-            'body': 'serverless_wsgi not installed. Please add it to requirements.txt'
+            'headers': {'Content-Type': 'application/json'},
+            'body': json.dumps({
+                'error': 'Function execution failed',
+                'details': str(e),
+                'path': event.get('path', 'unknown'),
+                'method': event.get('httpMethod', 'unknown')
+            })
         }

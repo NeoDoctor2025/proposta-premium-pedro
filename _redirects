@@ -1,2 +1,5 @@
 # Netlify redirects for Flask app
+# Serve static files directly
+/static/*    /static/:splat    200
+# Redirect all other requests to Flask function
 /*    /.netlify/functions/app    200
