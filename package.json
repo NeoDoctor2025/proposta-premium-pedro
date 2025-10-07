@@ -1,0 +1,11 @@
+{
+  "name": "proposta-premium",
+  "version": "1.0.0",
+  "description": "Flask app with Netlify Functions",
+  "scripts": {
+    "build": "echo 'Static files ready for deployment'"
+  },
+  "engines": {
+    "node": "18"
+  }
+}

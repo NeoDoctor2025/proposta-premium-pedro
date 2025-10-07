@@ -1,41 +1,35 @@
-# Deploy no Netlify - Instruções
+# 🚀 Deploy no Netlify - Projeto Flask
 
-## ✅ Projeto Preparado para Deploy
+Este projeto está **TOTALMENTE CONFIGURADO** para deploy automático no Netlify.
 
-Seu projeto Flask já está configurado para deploy no Netlify! Todos os arquivos necessários foram criados e configurados.
+## ✅ Arquivos de Configuração Preparados
 
-## 📁 Arquivos de Configuração Criados
-
-- ✅ `requirements.txt` - Dependências do Python
+- ✅ `requirements.txt` - Dependências Python
 - ✅ `runtime.txt` - Versão do Python (3.11)
-- ✅ `netlify.toml` - Configurações de build do Netlify
-- ✅ `_redirects` - Redirecionamentos para a função serverless
-- ✅ `netlify/functions/app.py` - Função serverless para Flask
-- ✅ `app.py` - Ajustado para produção
+- ✅ `netlify.toml` - Configurações de build e deploy
+- ✅ `_redirects` - Regras de redirecionamento
+- ✅ `netlify/functions/app.py` - Função serverless
+- ✅ `app.py` - Aplicação Flask configurada para produção
+- ✅ `.gitignore` - Arquivos ignorados pelo Git
+- ✅ **Repositório Git atualizado e sincronizado**
 
-## 🚀 Como Fazer o Deploy
+## 🎯 Passos para Deploy (PRONTO PARA EXECUTAR)
 
-### Opção 1: Via Git (Recomendado)
+### Via Git (Recomendado) - DEPLOY AUTOMÁTICO
 
-1. **Inicialize um repositório Git** (se ainda não tiver):
-   ```bash
-   git init
-   git add .
-   git commit -m "Preparar projeto para deploy no Netlify"
-   ```
+1. **Acesse [Netlify](https://netlify.com)**
+2. **Faça login ou crie uma conta**
+3. **Clique em "New site from Git"**
+4. **Conecte seu repositório GitHub**
+5. **Selecione o repositório: `proposta-premium-`**
+6. **As configurações serão detectadas automaticamente pelo `netlify.toml`**
+7. **Clique em "Deploy site"**
 
-2. **Crie um repositório no GitHub/GitLab** e faça push:
-   ```bash
-   git remote add origin https://github.com/seu-usuario/seu-repositorio.git
-   git push -u origin main
-   ```
-
-3. **No Netlify**:
-   - Acesse [netlify.com](https://netlify.com)
-   - Clique em "New site from Git"
-   - Conecte seu repositório
-   - O Netlify detectará automaticamente as configurações do `netlify.toml`
-   - Clique em "Deploy site"
+### ⚡ Deploy Instantâneo
+- **Build Command**: Configurado automaticamente
+- **Publish Directory**: Configurado automaticamente  
+- **Functions Directory**: `netlify/functions`
+- **Python Version**: 3.11
 
 ### Opção 2: Via Drag & Drop
 
